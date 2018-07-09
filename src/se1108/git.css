@@ -1,0 +1,128 @@
+* {box-sizing:border-box;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,legend,button,form,fieldset,input,textarea,p,blockquote,th,td {padding:0;margin:0;}
+body {background:#fff;color:#333;}
+q:before,q:after {content:"";}  
+fieldset,img,abbr,acronym {border:0 none;}
+abbr,acronym {font-variant:normal;}
+legend {color:#000;}
+address,caption,cite,code,dfn,em,strong,th,var {font-weight:normal;font-style:normal;}
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+table {border-collapse:collapse;border-spacing: 0;}
+caption,th {text-align:left;}
+input,img,select {vertical-align:middle;}
+ol,ul {list-style:none;}  
+input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;font-size:100%;}
+a {display:inline-block;text-decoration:none;color:#0366d6;}
+
+.App {
+	text-align: center;
+}
+
+.App-logo {
+	animation: App-logo-spin infinite 20s linear;
+	height: 48px;
+}
+
+.App-header {
+	background-color: #222;
+	padding: 20px 0;
+	color: white;
+}
+
+@keyframes App-logo-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
+
+.text-green {
+    color: #28a745 !important;
+}
+
+.width-full {
+	width:100% !important;
+}
+
+.form-control, .form-select {
+	min-height: 34px;
+	padding: 6px 8px;
+	font-size: 16px;
+	line-height: 20px;
+	color: #24292e;
+	vertical-align: middle;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	outline: none;
+	box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+}
+
+.input-contrast {
+	background-color:#fafbfc;
+}
+
+.gnb-wrap {padding:5px 0;}
+.gnb-wrap ul {display:flex;}
+.gnb-wrap ul li {padding:0; width:33%;}
+.gnb-wrap ul li a {outline:1px solid red; max-width:100%; padding:10px 20px; color:#fff;}
+.gnb-wrap ul li .active {font-weight:bold;}
+
+.tab {}
+.tab ul {}
+.tab ul:after {display:block; clear:both; content:"";}
+.tab ul li {border-bottom:1px solid #dfe2e5; float:left; background:#fafbfc;}
+.tab ul li a {display:block; padding:10px 0;}
+.tab ul li.tab__active {border-bottom:0; border-left:1px solid #dfe2e5; border-right:1px solid #dfe2e5; background:#fff;}
+.tab ul li:first-child {border-left:0;}
+.tab ul li:last-child {border-right:0;}
+.tab ul li.tab__active a {color:#333;}
+
+.dashboard-tab ul li {width:50%;}
+
+.dashboard-search {padding:15px;}
+
+.bubble {
+    padding: 0;
+    margin: 0 15px 15px;
+    overflow: hidden;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    background: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+}
+
+.bubble .bubble-title {
+    display: block;
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 14px;
+    color: #2f363d;
+    border-bottom: 1px solid #d1d5da;
+}
+
+.bubble .list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+}
+
+.bubble .list .list-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 14px 15px 14px 35px;
+    line-height: inherit;
+    text-align: left;
+}
