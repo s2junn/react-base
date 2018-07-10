@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class GitBubbleListItem extends Component {
+class GitListItemTypeRepo extends Component {
+	propTypes = {
+		itemCondensed : PropTypes.string,
+		itemDescription : PropTypes.string
+	}
+
 	render() {
 		var itemCondensed = "aaa"
 		var itemDescription = "bbb"
@@ -18,9 +23,4 @@ class GitBubbleListItem extends Component {
 	}
 }
 
-GitBubbleListItem.propTypes = {
-    itemCondensed : PropTypes.string,
-    itemDescription : PropTypes.string
-}
-
-export default GitBubbleListItem;
+export default GitListItemTypeRepo;
