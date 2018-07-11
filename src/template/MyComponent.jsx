@@ -43,11 +43,11 @@ class MyComponent extends Component {
 
 	// render
 	render() {
-		return () {
+		return (
 			<Fragment>
 
 			</Fragment>
-		};
+		);
 	}
 }
 
