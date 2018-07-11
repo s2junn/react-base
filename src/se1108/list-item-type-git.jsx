@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import GitIcon from './git-icon.jsx';
 
-class GitListItem extends Component {
-	propTypes = {
-		itemCondensed : PropTypes.string,
-		itemDescription : PropTypes.string
+class ListItemGit extends Component {
+	static propTypes = {
+		itemData: PropTypes.object
+	}
+
+	constructor( props ) {
+		super( props );
+		
+		this.setState = {
+			
+		}
 	}
 
 	render() {
-		var itemCondensed = "aaa"
-		var itemDescription = "bbb"
-
 		return (
 			<a href="#" className="list-item">
-				일반 리스트
+				<GitIcon iconName="repo" />
+				<div className="list-item-title repo-name">
+					ABCDE
+				</div>
 			</a>
 		);
 	}
 }
 
-export default GitListItem;
+export default ListItemGit;
