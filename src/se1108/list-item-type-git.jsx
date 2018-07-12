@@ -18,9 +18,11 @@ class ListItemGit extends Component {
 	render() {
 		return (
 			<a href="#" className="list-item">
-				<GitIcon iconName="repo" />
-				<div className="list-item-title repo-name">
-					ABCDE
+				<GitIcon iconName="pull-request" />
+				<div className="list-item-title">
+					<div className="text-gray">
+						<span style={{margin:"0 4px"}}>·</span><span>{this.props.itemData.title}</span>
+					</div>
 				</div>
 			</a>
 		);

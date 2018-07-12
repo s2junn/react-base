@@ -1,6 +1,12 @@
 .text-green {
     color: #28a745 !important;
 }
+.text-gray {
+	color: #586069 !important
+}
+.text-bold {
+	font-weight:bold;
+}
 
 .width-full {
 	width:100% !important;

@@ -34,7 +34,7 @@ class List extends Component {
 		var index = 0;
 		for ( var item in this.props.itemData ) {
 			console.log(this.props.itemData[item])
-			if ( this.state.className == "list" ) {
+			if ( this.state.className === "list" ) {
 				rows.push(<ListItemGit key={index} itemData={this.props.itemData[item]} />);
 			} else {
 				rows.push(<ListItemGitRepo key={index} itemData={this.props.itemData[item]} />);

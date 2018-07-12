@@ -14,10 +14,9 @@ class GitListItemTypeRepo extends Component {
 
 		return (
 			<a href="#" className="list-item repo-list-item">
-				<GitIcon iconName="pull-request" />
+				<GitIcon iconName="repo" />
 				<div>
-					<span>{itemCondensed}</span>
-					<span>{itemDescription}</span>
+					<span className="list-item-title repo-name">{itemCondensed}</span>
 				</div>
 			</a>
 		);
