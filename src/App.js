@@ -6,6 +6,8 @@ import Git from './se1108/git.jsx';
 
 class App extends Component {
 	render() {
+    let title="feature/test";
+    
 		return (
 			<div className="App">
 				<header className="App-header">
