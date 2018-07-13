@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './images/logo.png';
 import './App.css';
 
+import Git from './se1108/git.jsx';
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+	render() {
+    let title="feature/test";
+    
+		return (
+			<div className="App">
+				<header className="App-header">
+					<img className="App-header__logo" src={logo} />
+				</header>
+				<Git/>
+			</div>
+		);
+	}
 }
 
 export default App;
