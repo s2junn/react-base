@@ -1,3 +1,7 @@
+body {
+	height:100vh;
+}
+
 .App {
 	text-align: center;
 	position:relative;
@@ -12,6 +16,23 @@
 	height:60px;
 }
 
+.App-header .logo,
 .App-header__logo {
-	height:40%;
+	width:140px;
+}
+
+.App-header .icon-area {
+	width:24px;
+	height:24px;
+}
+
+.contents-wrapper {
+	height:calc(100% - 60px);
+}
+
+.btn img {width:100%;}
+
+.btn.gnb {
+	width:24px;
+	height:24px;
 }
