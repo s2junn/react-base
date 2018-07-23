@@ -20,9 +20,11 @@ class CodeLogin extends Component {
         return (
             <div>
                 <h1>CodeLogin</h1>
-                <Button variant="contained" className={ classes.button }>
-                    <CodeLink to={{ pathname: '/', state: { auth: true } }}>로그인</CodeLink>
-                </Button>
+                <CodeLink to={{ pathname: '/', state: { auth: true } }}>
+                    <Button variant="contained" className={ classes.button }>
+                        로그인
+                    </Button>
+                </CodeLink>
             </div>
         );
     }
