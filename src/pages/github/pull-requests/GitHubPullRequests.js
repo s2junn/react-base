@@ -1,15 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Tabs, Tab } from '@material-ui/core';
+import { Tabs, Tab, List, ListItem } from '@material-ui/core';
 import axios from 'axios';
 import 'se1108/git.css';
+import PullRequestList from 'pages/github/components/list/PullRequestList.js';
 
-const styles = {
-
+const propTypes = {
+	classes: PropTypes.object.isRequired
 };
 
-class GitHubPullRequesets extends Component {
+const styles = {
+};
+
+class GitHubPullRequests extends Component {
     static defaultProps = {
 
     };
@@ -18,33 +22,32 @@ class GitHubPullRequesets extends Component {
         super( props );
 
         this.state = Object.assign({}, props, {
-            tabsValue: 0,
+			tabsValue: 0,
+			isLoadComplate: false,
             PRData: []
         });
     }
 
     handleChange = (event, tabsValue) => {
-        this.setState({ tabsValue });
+		this.setState({ tabsValue });
     };
 
     componentDidMount() {
-		let testGithub = 'https://api.github.com/repos/se1108/icechoc/pulls';
+		
+		let testGithub = 'https://api.github.com/search/issues';
 		let _this = this;
-        axios.get(testGithub, {
+        axios.get( testGithub + '?q=is:open+is:pr+mentions:se1108', {
 			headers: {
-				Authorization: 'Bearer aadb5a0a54f27a1d14cb3900ff1e360f44c409c7',
+				Authorization: 'token aadb5a0a54f27a1d14cb3900ff1e360f44c409c7',
 			}
         })
         .then(function (response) {
-			console.log(response);
+			console.log(response.data);
 			
 			_this.setState({
-				PRData:response.data
+				PRData:response.data.items,
+				isLoadComplate: true
 			});
-
-			// _this.setState((prevState, props) => ({
-			// 	PRData:response.data
-			// }));
         })
         .catch(function (error) {
             console.log(error);
@@ -52,7 +55,9 @@ class GitHubPullRequesets extends Component {
         .then(function () {
             // always executed
         });
-    }
+	}
+	
+	
 
     render() {
         const { classes } = this.props;
@@ -64,23 +69,21 @@ class GitHubPullRequesets extends Component {
                     value={tabsValue}
                     onChange={this.handleChange}
                     indicatorColor="primary"
-                    textColor="primary"
+					textColor="primary"
+					fullWidth
                     scrollable
                     scrollButtons="auto"
                 >
-                    <Tab label="Open"/>
-                    <Tab label="Closed" />
-                    <Tab label="Yours" />
+                    <Tab label="Created" />
+                    <Tab label="Assigned" />
+                    <Tab label="Mentioned" />
                 </Tabs>
-                {this.state.PRContents}
+				<PullRequestList items={this.state.PRData}/>
             </Fragment>
         );
     }
 }
 
-GitHubPullRequesets.propTypes = {
-	classes: PropTypes.object.isRequired,
-	PRContents: PropTypes.array
-}
+GitHubPullRequests.propTypes = propTypes;
 
-export default withStyles( styles )( GitHubPullRequesets );
+export default withStyles( styles )( GitHubPullRequests );

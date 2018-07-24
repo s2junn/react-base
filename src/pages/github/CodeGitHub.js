@@ -5,7 +5,7 @@ import CodeLink from 'components/Link/CodeLink';
 import { Switch, Route } from 'react-router-dom';
 
 import GitHubDashboard from './dashboard/GitHubDashboard'
-import GitHubPullRequesets from './pull-requests/GitHubPullRequesets'
+import GitHubPullRequests from './pull-requests/GitHubPullRequests'
 import GitHubIssues from './issues/GitHubIssues'
 
 const styles = {
@@ -31,7 +31,7 @@ class CodeGitHub extends Component {
                 
                 <Switch>
                     <Route path={ `${ this.props.match.url }/dashboard` } component={ GitHubDashboard } />
-                    <Route path={ `${ this.props.match.url }/pullrequests` } component={ GitHubPullRequesets } />
+                    <Route path={ `${ this.props.match.url }/pullrequests` } component={ GitHubPullRequests } />
                     <Route path={ `${ this.props.match.url }/issues` } component={ GitHubIssues } />
                 </Switch>
 
