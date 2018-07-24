@@ -5,7 +5,7 @@ import CodeLink from 'components/Link/CodeLink';
 import { Switch, Route } from 'react-router-dom';
 
 import GitHubDashboard from './dashboard/GitHubDashboard'
-import GitHubPullRequesets from './pull-requests/GitHubPullRequesets'
+import GitHubPullRequests from './pull-requests/GitHubPullRequests'
 import GitHubIssues from './issues/GitHubIssues'
 
 const styles = {
@@ -28,25 +28,24 @@ class CodeGitHub extends Component {
                 <h1>
                     CodeGitHub
                 </h1>
-
-                <div className="menu-btn-container">
-                    <CodeLink to={ `${ this.props.match.url }/dashboard` }>
-                        <span>Dashboard</span>
-                    </CodeLink>
-                    <CodeLink to={ `${ this.props.match.url }/pullrequests` }>
-                        <span>Pull Requests</span>
-                    </CodeLink>
-                    <CodeLink to={ `${ this.props.match.url }/issues` }>
-                        <span>Issues</span>
-                    </CodeLink>
-                </div>
                 
                 <Switch>
                     <Route path={ `${ this.props.match.url }/dashboard` } component={ GitHubDashboard } />
-                    <Route path={ `${ this.props.match.url }/pullrequests` } component={ GitHubPullRequesets } />
+                    <Route path={ `${ this.props.match.url }/pullrequests` } component={ GitHubPullRequests } />
                     <Route path={ `${ this.props.match.url }/issues` } component={ GitHubIssues } />
                 </Switch>
 
+				<nav className="tabs">
+                    <CodeLink to={ `${ this.props.match.url }/dashboard` } activeClassName="selected">
+                        <span>Dashboard</span>
+                    </CodeLink>
+                    <CodeLink to={ `${ this.props.match.url }/pullrequests` } activeClassName="selected">
+                        <span>Pull Requests</span>
+                    </CodeLink>
+                    <CodeLink to={ `${ this.props.match.url }/issues` } activeClassName="selected">
+                        <span>Issues</span>
+                    </CodeLink>
+				</nav>
             </div>
         );
     }
