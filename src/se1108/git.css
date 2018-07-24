@@ -49,6 +49,10 @@
 }
 
 .tabs {
+	position: fixed;
+	bottom:0;
+	left:0;
+	z-index:10;
 	display: table;
 	width: 100%;
 	table-layout: fixed
@@ -56,20 +60,18 @@
 
 .tabs>a {
 	display: table-cell;
-	padding: 10px 0;
+	padding: 12px 0 15px;
 	font-size: 14px;
 	font-weight: 600;
 	text-align: center;
-	background-color:#fafbfc;
-	border-top: 1px solid #dfe2e5
+	color:#999;
+	background-color:#f6f6f6;
+	border-top: 3px solid #dfe2e5
 }
 
 .tabs>a.selected {
-	color: #444d56;
-	background-color: #fff;
-	border-right: 1px solid #dfe2e5;
-	border-top-color: #fff;
-	border-left: 1px solid #dfe2e5
+	color: #333;
+	border-top-color: #ffa41f;
 }
 
 .tabs>a:first-child {

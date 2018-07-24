@@ -102,19 +102,19 @@ class GitContents extends Component {
 			bubbleTitle: "Recent activity",
 			listType: "repo",
 			listData: []
-		}
+		};
 
 		var demoRepo = {
 			bubbleTitle: "Repositories you contribute to",
 			listType: "repo",
 			listData: demoData_Repo
-		}
+		};
 	
 		var demoRepo2 = {
 			bubbleTitle: "Starred repositories",
 			listType: "repo",
 			listData: demoData_Repo
-		}
+		};
 
         return (
             <Fragment>
