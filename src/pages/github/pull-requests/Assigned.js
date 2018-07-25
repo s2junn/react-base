@@ -29,7 +29,7 @@ class Assigned extends Component {
 		let _this = this;
         axios.get( testGithub + '?q=is:open+is:pr+assignee:se1108', {
 			headers: {
-				Authorization: 'token 6cf2d0f6ee099d3b7efe372c07acafafe7dfc978',
+				Authorization: 'token 04a1a297a090bbd7a9d882523a98a4618398b347',
 			}
         })
         .then(function (response) {

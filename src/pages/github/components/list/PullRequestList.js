@@ -20,7 +20,7 @@ const styles = {
 	nwoLink: {
 		display:'block',
 		marginBottom:'6px',
-		fontSize:'17px',
+		fontSize:'13px',
 		fontWeight:600,
 		color:'#999'
 	},
@@ -28,7 +28,7 @@ const styles = {
 		display:'block',
 		marginRight:'55px',
 		marginBottom:'11px',
-		fontSize:'17px',
+		fontSize:'13px',
 		fontWeight:'600',
 		lineHeight:'1.2',
 		color:'#333',
@@ -37,12 +37,12 @@ const styles = {
 	byline: {
 		display:'block',
 		margin:0,
-		fontSize:'15px',
+		fontSize:'11px',
 		color:'#999'
 	},
 	meta: {
 		color:'#999',
-		fontSize:'15px',
+		fontSize:'11px',
 		display:'inline-block',
 		width:'20px',
 		height:'20px',

@@ -13,6 +13,8 @@ const propTypes = {
 const styles = {
 	tabRoot: {
 		color:'#ffd5a9',
+		fontSize:'15px',
+		fontWeight:'800',
 		opacity:1
     },
 	tabSelected: {
