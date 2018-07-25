@@ -2,15 +2,22 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Tabs, Tab, List, ListItem } from '@material-ui/core';
-import axios from 'axios';
+import { Switch, Route } from 'react-router-dom'
 import 'se1108/git.css';
-import PullRequestList from 'pages/github/components/list/PullRequestList.js';
+import { Created, Assigned, Mentioned } from 'pages/github/pull-requests';
 
 const propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
 const styles = {
+	tabRoot: {
+		color:'#ffd5a9',
+		opacity:1
+    },
+	tabSelected: {
+		color:'#fff'
+	},
 };
 
 class GitHubPullRequests extends Component {
@@ -22,42 +29,13 @@ class GitHubPullRequests extends Component {
         super( props );
 
         this.state = Object.assign({}, props, {
-			tabsValue: 0,
-			isLoadComplate: false,
-            PRData: []
+			tabsValue: "Created",
         });
     }
 
     handleChange = (event, tabsValue) => {
 		this.setState({ tabsValue });
     };
-
-    componentDidMount() {
-		
-		let testGithub = 'https://api.github.com/search/issues';
-		let _this = this;
-        axios.get( testGithub + '?q=is:open+is:pr+mentions:se1108', {
-			headers: {
-				Authorization: 'token aadb5a0a54f27a1d14cb3900ff1e360f44c409c7',
-			}
-        })
-        .then(function (response) {
-			console.log(response.data);
-			
-			_this.setState({
-				PRData:response.data.items,
-				isLoadComplate: true
-			});
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-        .then(function () {
-            // always executed
-        });
-	}
-	
-	
 
     render() {
         const { classes } = this.props;
@@ -68,17 +46,19 @@ class GitHubPullRequests extends Component {
                 <Tabs
                     value={tabsValue}
                     onChange={this.handleChange}
-                    indicatorColor="primary"
-					textColor="primary"
 					fullWidth
                     scrollable
-                    scrollButtons="auto"
+					scrollButtons="auto"
+					className="innnerTabs depth1"
+					indicatorColor="#ff41af"
                 >
-                    <Tab label="Created" />
-                    <Tab label="Assigned" />
-                    <Tab label="Mentioned" />
+                    <Tab value="Created" classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="Created" />
+                    <Tab value="Assigned" classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="Assigned" />
+                    <Tab value="Mentioned" classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="Mentioned" />
                 </Tabs>
-				<PullRequestList items={this.state.PRData}/>
+				{tabsValue === 'Created' && <Created/>}
+				{tabsValue === 'Assigned' && <Assigned/>}
+				{tabsValue === 'Mentioned' && <Mentioned/>}
             </Fragment>
         );
     }

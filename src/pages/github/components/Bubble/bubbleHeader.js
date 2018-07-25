@@ -7,10 +7,11 @@ const styles = {
         display: 'block',
         padding: '10px 15px',
         margin: 0,
-        fontSize: '14px',
+		fontSize: '15px',
+		fontWeight: '800',
         color: '#2f363d',
-        backgroundColor: '#fafbfc',
-        borderBottom: '1px solid #d1d5da',
+        backgroundColor: '#f6f6f6',
+        borderBottom: '1px solid #cdcdcd'
     }
 };
 
@@ -25,7 +26,7 @@ class BubbleHeader extends Component {
 			<h3 className={classes.bubbleTitle}>
 				{this.props.children}
 			</h3>
-        )
+        );
     }
 }
 

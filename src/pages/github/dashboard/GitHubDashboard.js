@@ -9,15 +9,14 @@ import BubbleContents from 'pages/github/components/Bubble/bubbleContents.js'
 const styles = {
 	dashboardSearch: {
 		background:'#ffa41f',
-		padding:'15px',
 		marginBottom:'15px'
 	},
 	searchInput: {
 		fontSize:'15px',
 		fontWeight:'600',
-		color:"#999",
 		margin:'0 auto',
 		padding:'15px',
+		backgroundColor:'#fff',
 		borderRadius:'3px',
 		border:'1px solid #cdcdcd'
 	}
@@ -72,8 +71,8 @@ class GitHubDashboard extends Component {
         return (
             <Fragment>
 				<div className="git-contents">
-					<div className={classes.dashboardSearch}>
-						<input type="text" placeholder="Search GitHub" className={classes.searchInput + " form-control input-contrast width-full"}/>
+					<div className={'search-area ' + classes.dashboardSearch}>
+						<input type="text" placeholder="Search GitHub" className={classes.searchInput + ' form-control input-contrast width-full'}/>
 					</div>
 					<Bubble>
 						<BubbleHeader>Recent activity</BubbleHeader>
@@ -83,15 +82,13 @@ class GitHubDashboard extends Component {
 					</Bubble>
 					<Bubble>
 						<BubbleHeader>Repositories you contribute to</BubbleHeader>
-						<BubbleContents>
-							<List>
-							{
-								demoData_Repo.map( (data, index) => {
-									return <ListItem key={index}>{data.full_name}</ListItem>
-								} )
-							}
-							</List>
-						</BubbleContents>
+						<List style={{padding:0}}>
+						{
+							demoData_Repo.map( (data, index) => {
+								return <ListItem style={{padding:'15px'}} key={index}>{data.full_name}</ListItem>
+							} )
+						}
+						</List>
 					</Bubble>
 					<Bubble>
 						<BubbleHeader>Starred repositories</BubbleHeader>

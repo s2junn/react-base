@@ -4,7 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
     bubbleContents: {
-        padding: '15px'
+		padding: '15px',
+		backgroundColor:'#fff'
     }
 };
 
@@ -16,9 +17,9 @@ class BubbleContents extends Component {
     render() {
 		const { classes } = this.props;
 		return (
-			<Fragment>
+			<div className={classes.bubbleContents}>
 				{this.props.children}
-			</Fragment>
+			</div>
 		);
 	}
 }

@@ -25,10 +25,6 @@ class CodeGitHub extends Component {
         
         return (
             <div>
-                <h1>
-                    CodeGitHub
-                </h1>
-                
                 <Switch>
                     <Route path={ `${ this.props.match.url }/dashboard` } component={ GitHubDashboard } />
                     <Route path={ `${ this.props.match.url }/pullrequests` } component={ GitHubPullRequests } />

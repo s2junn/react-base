@@ -5,13 +5,13 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
     root: {
         padding: 0,
-        margin: '0 15px 15px',
+        margin: '0 22px 15px',
         overflow: 'hidden',
         wordBreak: 'break-word',
         wordWrap: 'break-word',
         whiteSpace: 'normal',
         background: '#fff',
-        border: '1px solid #d1d5da',
+        border: '1px solid #cdcdcd',
         borderRadius: '3px'
     }
 };

@@ -82,11 +82,9 @@
 	border-right: 0
 }
 
-.dashboard-search {padding:15px;}
-
 .bubble {
     padding: 0;
-    margin: 0 15px 15px;
+    margin: 0 22px 15px;
     overflow: hidden;
     word-break: break-word;
     word-wrap: break-word;
@@ -162,13 +160,6 @@
     top:14px;
     left:15px;
     border-radius:2px
-}
-.list-item .meta{
-    float:right;
-    margin-bottom:5px;
-    margin-left:5px;
-    font-size:11px;
-    color:#6a737d
 }
 .list-item .meta ~ .list-item-title{
     margin-right:55px
@@ -340,4 +331,50 @@
 .user-list .follow-list-info{
     font-size:12px;
     color:#586069
+}
+
+.octicon {
+	display: inline-block;
+	vertical-align: text-top;
+	fill: currentColor;
+}
+
+/*
+ * InnerTabs
+ * 상단에 사용하는 탭 관련
+ */
+.innnerTabs {
+	height:40px;
+	font-size:15px;
+	font-weight:800;
+}
+
+/*
+ * 상단 뎁스에 따른 테마
+ */
+.depth1 {
+	background:#ffa41f;
+	color:#fff;
+}
+.depth2 {
+	background:#d3d1ce;
+	color:#5a554f;
+}
+.depth3 {
+	background:#fff;
+	color:#d5d5d5;
+	border-bottom:1px solid #a8a49d;
+}
+
+/*
+ * 검색 폼 관련
+ */
+.search-area {
+	padding:13px 22px;
+}
+.search-area input {
+	color:#999;
+}
+.search-area input:placeholder-shown {
+	color:#000;
 }
