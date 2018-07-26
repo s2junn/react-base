@@ -52,7 +52,7 @@ class GitHubPullRequests extends Component {
                     scrollable
 					scrollButtons="auto"
 					className="innnerTabs depth1"
-					indicatorColor="#ff41af"
+					// indicatorColor="#ff41af"
                 >
                     <Tab value="Created" classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="Created" />
                     <Tab value="Assigned" classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="Assigned" />
