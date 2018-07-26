@@ -23,7 +23,7 @@ class Created extends Component {
         });
 	}
 
-	//* GitHub
+	/* GitHub
 	componentDidMount() {
 		let testGithub = 'https://api.github.com/search/issues';
 		let _this = this;
@@ -48,7 +48,7 @@ class Created extends Component {
         });
 	}
 	// */
-	/* SEMP
+	//* SEMP
     componentDidMount() {		
 		let testGithub = 'http://114.201.140.150:10080/semp/ws/rest/getService/GATEWAY_V1_GIT/';
 		let _this = this;
