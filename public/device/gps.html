@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="../device/js/gps.js" > </script>
+
+<script>
+		function onUnload(event)
+		{			 
+			var watchId = sessionStorage.watchPositionId;
+	
+			if(watchId != null) 
+			{
+				MDHDevice.GPS.clearWatch(watchId);
+				sessionStorage.removeItem("watchPositionId");				
+			}	
+		}
+</script>
+
+</head>
+<body onUnload="javascript:onUnload();">
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap">
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>GPS</h1>
+			<a class="prev"></a><a href="" class="home"></a></div> 
+	</header>
+	<!----//header ----> 
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!---list_01--->
+			<li class="slide_li"><a><span>getCurrentPosition </span><em class="list-icon-go"></em></a> </li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none">
+				<dl class="dl-ver">
+					<dt>Accuracy</dt>
+					<dd>
+						<div class="com-input-type">
+							<select name="GPS_current Select" id="GPS_current" class="ht">
+								<option value=1>Very Low</option>
+								<option value=2>Low</option>
+								<option value=3>Middle</option>
+								<option value=4>Sensitive</option>
+								<option value=5>Very Sensitive</option>
+							</select>
+						</div>
+					</dd>
+					<dt>Input Timeout</dt>
+					<dd>
+						<label>
+							<input type="number" id="timeoutCurrent" name="timeoutCurrent"  placeholder="" class="int" maxlength="" value="3000">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:MDHDevice_GPS_getCurrentPositionStart()" class="btn-type-dt-on">CurrentPosition</a></div>
+			</li>
+			<!---//list_accord -----> 
+			<!---//list_01---> 
+			<!---list_02--->
+			<li class="slide_li"><a><span>watchPosition</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none">
+				<dl class="dl-ver">
+				<dt>Accuracy</dt>
+					<dd> 
+						<div class="com-input-type" >
+								<select name="GPS_watch Select" id="GPS_watch">
+								<option value=1>Very Low</option>
+								<option value=2>Low</option>
+								<option value=3>Middle</option>
+								<option value=4>Sensitive</option>
+								<option value=5>Very Sensitive</option>
+								</select>
+						</div>					
+					</dd>
+					<dt>Input Timeout</dt>
+					<dd> 
+						<!---- Input --->
+						<label>
+							<input type="number" id="timeoutWatch" name="timeoutWatch"  placeholder="" class="int" maxlength="" value="30000">
+						</label>
+						<!----//Input ---> 
+					</dd>
+					<dt>Input Frequency</dt>
+					<dd> 
+						<!---- Input --->
+						<label>
+							<input type="number" id="frequency" name="frequency"  placeholder="" class="int" maxlength="" value="10000">
+						</label>
+						<!----//Input ---> 
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:MDHDevice_GPS_watchPositionStart()" class="btn-type-dt-on">Watch</a></div>
+			</li>
+			<!---//list_accord -----> 
+			<!---//list_02---> 
+			<!---list_03--->
+			<li class="gps_watch_li"><a href="javascript:MDHDevice_GPS_clearWatch()"><span>clearWatch</span><em class="list-icon-go"></em></a></li>
+			<li class="accord" style="display: none">
+					<div id="gps_result" class="notice-data-result"></div>
+					<div id="btn-group-dt"> <a href="javascript:MDHDevice_GPS_clearWatchStart()" class="btn-type-dt-on">Clear</a></div>
+			</li>
+			<!---//list_03--->
+		</ul>
+	</div>
+	<!--//listWrap -->
+</div>
+<!--//contents -->
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

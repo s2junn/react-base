@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/barcode.js"></script>
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Barcode</h1>
+			<a class="prev"></a><a href="../index.html" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<li class=""><a href="javascript:MDHUtil_Barcode_decode()"><span>decode</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord">
+				<dl class="notice-data notice-ver">
+					<dt></dt>
+					<dd id="decode_result">QR Code,This is a test decode message</dd>
+				</dl>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>encode</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>QR-Code Generator</dt>
+					<dd>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-url" checked>
+								URL</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-text">
+								TEXT</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-phone">
+								Phone</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-sms">
+								SMS</label>
+						</div>
+					</dd>
+					<dt>Input</dt>
+					<dd>
+						<input type="text" id="keyword" name="keyword"  placeholder="Input" value="">
+					</dd>
+				</dl>
+				<div id="btn-group-dt"><a href="javascript:MDHUtil_Barcode_generate()" class="btn-type-dt-on">Generate</a></div>
+				
+				<div data-role="content" id="encode_result" style="display: none">
+						   <img style="width:100%;" id="encode_barcode_image" src="" >
+						   <div id="encode_result_log"></div>
+				</div>
+				
+			</li>
+			<!---//list_accord ----->
+		</ul>
+	</div>
+	<!--//listWrap --> 
+	<!--//contents --> 
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

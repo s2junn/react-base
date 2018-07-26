@@ -83,7 +83,7 @@ class CodeHome extends Component {
         return (
             <Fragment>
                 <div className={ classes.root }>
-                    <AppBar position="static" color="default">
+                    <AppBar position="static" color="default" style={{height:'60px', backgroundColor:'#fff'}}>
                         <Toolbar>
                             <Typography align="center" variant="title" color="inherit" className={ classes.flex }>
                                 <img src={ temp_logo } className="temp-logo" />

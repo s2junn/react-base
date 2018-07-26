@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/notification.js"></script>
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Notification</h1>
+			<a class="prev"></a><a href="#;" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	<!-- contents -->
+	<div class="contents form-wrap">
+		<dl class="dl-ver dl-select">
+			<dt>Notification Type</dt>
+			<dd>
+				<select name="noti-type" id="noti-type">
+					<option>Normal</option>
+					<option>Big Picture</option>
+					<option>Big Text</option>
+					<option>Inbox</option>
+					<option>Progress</option>
+				</select>
+			</dd>
+		</dl>
+		<!-- select-normal -->
+		<div class="noti-setting" id="normal" style="display:">
+			<dl class="dl-ver">
+				<dt>Title</dt>
+				<dd>
+					<input type="text" id="title" name="title"  placeholder="" value="Normal Title">
+				</dd>
+				<dt>Massage</dt>
+				<dd>
+					<textarea rows="4" id="message">Normal Notificatioin Message</textarea>
+				</dd>
+				<dt>Ticker Text</dt>
+				<dd>
+					<input type="text" id="ticker-text" name="ticker-text"  placeholder="" value="Normal Ticker Text">
+				</dd>
+				<dt>Number</dt>
+				<dd>
+					<input type="text" id="number" name="number"  placeholder="" value="20">
+				</dd>
+				<dt>Icon</dt>
+				<dd>
+					<ul class="ico-select">
+						<li><a  class="selected alerm"></a></li>
+						<li><a  class="call"></a></li>
+						<li><a  class="add-alert"></a></li>
+						<li><a  class="web-asset"></a></li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="sound" checked>
+							Sound</label>
+					</div>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="vibrate" checked>
+							Vibrate</label>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //select-normal --> 
+		<!-- select-Big Picture -->
+		<div class="noti-setting" id="bigPicture" style="display:none">
+			<dl class="dl-ver">
+				<dt>Big Content Title</dt>
+				<dd>
+					<input type="text" id="big-title" name="big-title"  placeholder="" value="BicPicture Big Content Title">
+				</dd>
+				<dt>Summary Text</dt>
+				<dd>
+					<textarea rows="4" id="summary-text">BicPicture Summary Text</textarea>
+				</dd>
+				<dt>Title (collapsed)</dt>
+				<dd>
+					<input type="text" id="title" name="title"  placeholder="" value="BicPicture Title">
+				</dd>
+				<dt>Massage (collapsed)</dt>
+				<dd>
+					<textarea rows="4" id="message">BicPicture Notificatioin Message</textarea>
+				</dd>
+				<dt>Ticker Text</dt>
+				<dd>
+					<input type="text" id="ticker-text" name="ticker-text"  placeholder="" value="BicPicture Ticker Text">
+				</dd>
+				<dt>Number</dt>
+				<dd>
+					<input type="text" id="number" name="number"  placeholder="" value="10">
+				</dd>
+				<dt>Icon</dt>
+				<dd>
+					<ul class="ico-select">
+						<li><a class="selected alerm"></a></li>
+						<li><a class="call"></a></li>
+						<li><a class="add-alert"></a></li>
+						<li><a class="web-asset"></a></li>
+					</ul>
+				</dd>
+				<dt>Big Picture</dt>
+				<dd>
+					<ul class="pic-select">
+						<li><a class="selected pic-big01"></a></li>
+						<li><a class="pic-big02"></a></li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="sound" checked>
+							Sound</label>
+					</div>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="vibrate" checked>
+							Vibrate</label>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //select-Big Picture --> 
+		<!-- select-Big Text -->
+		<div class="noti-setting" id="bigText" style="display:none">
+			<dl class="dl-ver">
+				<dt>Big Content Title</dt>
+				<dd>
+					<input type="text" id="big-title" name="big-title"  placeholder="" value="BigText Big Content Title">
+				</dd>
+				<dt>Summary Text</dt>
+				<dd>
+					<textarea rows="4" id="summary-text">Bic Text Summary Text</textarea>
+				</dd>
+				<dt>Big Text</dt>
+				<dd>
+					<textarea rows="4" id="big-text">Mir's IT Blog adress is itmir.tistory.com Welcome to the Mir's Blog!! Nice to Meet you, this is Example JellyBean Notification</textarea>
+				</dd>
+				<dt>Title (collapsed)</dt>
+				<dd>
+					<input type="text" id="title" name="title"  placeholder="" value="BigText Title">
+				</dd>
+				<dt>Massage (collapsed)</dt>
+				<dd>
+					<textarea rows="4" id="message">BicText Notificatioin Message</textarea>
+				</dd>
+				<dt>Ticker Text</dt>
+				<dd>
+					<input type="text" id="ticker-text" name="ticker-text"  placeholder="" value="Bic Text Ticker Text">
+				</dd>
+				<dt>Number</dt>
+				<dd>
+					<input type="text" id="number" name="number"  placeholder="" value="30">
+				</dd>
+				<dt>Icon</dt>
+				<dd>
+					<ul class="ico-select">
+						<li><a class="selected alerm"></a></li>
+						<li><a class="call"></a></li>
+						<li><a class="add-alert"></a></li>
+						<li><a class="web-asset"></a></li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="sound" checked>
+							Sound</label>
+					</div>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="vibrate" checked>
+							Vibrate</label>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //select-Big Text --> 
+		<!-- select-Progress -->
+		<div class="noti-setting" id="inbox" style="display:none;">
+			<dl class="dl-ver">
+				<dt>Big Content Title</dt>
+				<dd>
+					<input type="text" id="big-title" name="big-title"  placeholder="" value="Inbox Big Content Title">
+				</dd>
+				<dt>Line 1</dt>
+				<dd>
+					<input type="text" id="line1" name="line1"  placeholder="" value="Inbox Line 1">
+				</dd>
+				<dt>Line 2</dt>
+				<dd>
+					<input type="text" id="line2" name="line2"  placeholder="" value="Inbox Line 2">
+				</dd>
+				<dt>Line 3</dt>
+				<dd>
+					<input type="text" id="line3" name="line3"  placeholder="" value="Inbox Line 3">
+				</dd>
+				<dt>Summary Text</dt>
+				<dd>
+					<textarea rows="4" id="summary-text">Inbox Summary Text</textarea>
+				</dd>
+				<dt>Title</dt>
+				<dd>
+					<input type="text" id="title" name="title"  placeholder="" value="Inbox Title">
+				</dd>
+				<dt>Massage (collapsed)</dt>
+				<dd>
+					<textarea rows="4" id="message">Inbox Notificatioin Message</textarea>
+				</dd>
+				<dt>Ticker Text</dt>
+				<dd>
+					<input type="text" id="ticker-text" name="ticker-text"  placeholder="" value="Inbox Ticker Text">
+				</dd>
+				<dt>Number</dt>
+				<dd>
+					<input type="text" id="number" name="number"  placeholder="" value="40">
+				</dd>
+				<dt>Icon</dt>
+				<dd>
+					<ul class="ico-select">
+						<li><a class="selected alerm"></a></li>
+						<li><a class="call"></a></li>
+						<li><a class="add-alert"></a></li>
+						<li><a class="web-asset"></a></li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="sound" checked>
+							Sound</label>
+					</div>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="vibrate" checked>
+							Vibrate</label>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //select-Inbox --> 
+		<!-- select-Progress -->
+		<div class="noti-setting" id="progress" style="display:none">
+			<dl class="dl-ver">
+				<dt>Interval (Millisecond)</dt>
+				<dd>
+					<input type="text" id="interval" name="interval"  placeholder="" value="100">
+				</dd>
+				<dt>Title</dt>
+				<dd>
+					<input type="text" id="title" name="title"  placeholder="" value="Progress Title">
+				</dd>
+				<dt>Content Text</dt>
+				<dd>
+					<input type="text" id="content-text" name="content-text"  placeholder="" value="Progress Content Text">
+				</dd>
+				<dt>Ticker Text</dt>
+				<dd>
+					<input type="text" id="ticker-text" name="ticker-text"  placeholder="" value="Progress Ticker Text">
+				</dd>
+				<dt>Number</dt>
+				<dd>
+					<input type="text" id="number" name="number"  placeholder="" value="50">
+				</dd>
+				<dt>Icon</dt>
+				<dd>
+					<ul class="ico-select">
+						<li><a class="selected alerm"></a></li>
+						<li><a class="call"></a></li>
+						<li><a class="add-alert"></a></li>
+						<li><a class="web-asset"></a></li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="sound">
+							Sound</label>
+					</div>
+					<div class="box-wrap">
+						<label>
+							<input name="checkbox" type="checkbox" id="vibrate" >
+							Vibrate</label>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- //select-Progress -->
+		<div id="btn-group-dt"><a href="javascript:MDHUtil_Notification_start()" class="btn-type-dt-on">Notify</a></div>
+	</div>
+	<!--//listWrap --> 
+</div>
+<!--//contents -->
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

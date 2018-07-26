@@ -70,7 +70,8 @@ class GitHubDashboard extends Component {
 
         return (
             <Fragment>
-				<div className="git-contents">
+                <img style={{width:'100%'}} src={require('assets/images/demo/github_dashboard.png')} alt=""/>
+				{/* <div className="git-contents">
 					<div className={'search-area ' + classes.dashboardSearch}>
 						<input type="text" placeholder="Search GitHub" className={classes.searchInput + ' form-control input-contrast width-full'}/>
 					</div>
@@ -102,7 +103,7 @@ class GitHubDashboard extends Component {
 							<div>TEST</div>
 						</BubbleContents>
 					</Bubble>
-				</div>
+				</div> */}
             </Fragment>
         );
     }

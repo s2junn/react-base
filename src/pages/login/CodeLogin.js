@@ -10,8 +10,8 @@ const styles = theme => ({
         textDecoration: 'none'
 	},
 	loginWrap: {
-		background: `url(${require( 'assets/images/bg_login.png' )}) no-repeat center/100% 100%`,
-	},
+		background: `url(${require( 'assets/images/bg_login.png' )}) no-repeat center/100% 100%`
+	}
 });
 
 class CodeLogin extends Component {
@@ -41,6 +41,6 @@ class CodeLogin extends Component {
 
 CodeLogin.propTypes = {
     classes: PropTypes.object.isRequired
-}
+};
 
 export default withStyles( styles )( CodeLogin );

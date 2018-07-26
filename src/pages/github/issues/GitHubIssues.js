@@ -17,7 +17,7 @@ class GitHubIssues extends Component {
 
         return (
             <div>
-                GitHubIssues
+                <img style={{width:'100%'}} src={require('assets/images/demo/github_issues.png')} alt=""/>
             </div>
         );
     }

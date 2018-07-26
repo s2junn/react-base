@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CodeLink from 'components/Link/CodeLink';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import GitHubDashboard from './dashboard/GitHubDashboard'
 import GitHubPullRequests from './pull-requests/GitHubPullRequests'
@@ -29,6 +29,9 @@ class CodeGitHub extends Component {
                     <Route path={ `${ this.props.match.url }/dashboard` } component={ GitHubDashboard } />
                     <Route path={ `${ this.props.match.url }/pullrequests` } component={ GitHubPullRequests } />
                     <Route path={ `${ this.props.match.url }/issues` } component={ GitHubIssues } />
+					{
+						this.props.match.url === '/home/github' && <Redirect to={`${ this.props.match.url }/dashboard`} />
+					}
                 </Switch>
 
 				<nav className="tabs">

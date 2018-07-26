@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/nfc_write_tag.js"></script>
+<script>
+		function onload(event)
+		{
+			MDH_onloadExecute();			
+		}
+</script>
+
+</head>
+<body onUnload="javascript:onUnload();">
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap">
+<!---- header ----->
+<header>
+	<div id="header">
+		<h1>NFC Write</h1>
+		<a class="prev"></a><a class="home"></a></div>
+</header>
+<!----//header ----> 
+
+<!-- contents -->
+<div class="contents form-wrap">
+	<div class="tag-info">
+		<div class="group">
+			<dl class="dl-ver-mi">
+				<dt>
+					<div class="mi-wrap mg01">
+						<label>
+							<input name="radio" type="radio" id="radio" value="TEXT" checked>
+							Text Type </label>
+					</div>
+				</dt>
+				<dd>
+					<input type="text" id="input_text" name="input"  placeholder="" >
+				</dd>
+			</dl>
+		</div>
+		<br>
+		<div class="group">
+			<dl class="dl-ver-mi">
+				<dt>
+					<div class="mi-wrap mg01">
+						<label>
+							<input name="radio" type="radio" id="radio" value="URL"  >
+							URL Type (http://, https://)</label>
+					</div>
+				</dt>
+				<dd>
+					<input type="text" id="input_url" name="input"  placeholder="" >
+				</dd>
+			</dl>
+		</div>
+		<br>
+		<div class="group">
+			<dl class="dl-ver-mi">
+				<dt>
+					<div class="mi-wrap mg02">
+						<label>
+							<input name="radio" type="radio" id="radio" value="FORMAT" >
+							Tag Format</label>
+					</div>
+				</dt>
+				<dd> </dd>
+			</dl>
+		</div>
+	</div>
+	<div id="btn-group-dt"><a href="javascript:MDH_CheckNFCStatus()" class="btn-type-dt-on">Write Tag</a></div>
+	<!--//contents --> 
+</div>
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

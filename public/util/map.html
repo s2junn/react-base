@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=2052dc822c929168373927e63714f774&libraries=services"></script>
+<script type="text/javascript" src="js/map.js"></script>
+
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Map</h1>
+			<a class="prev"></a><a class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!--- list_accord ----->
+			<li class="accord">
+				<div class="contents list-wrap map-view" id="map"></div>
+			<!--  <div class="map-button"><button name="current-position" id="current-position" onclick="findMyPosition();"><div></div></button></div>-->
+			<div class="map-button" onclick="findMyLocation();"></div>
+				<dl class="dl-ver">
+					<dt>Option</dt>
+					<dd>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-latlng" checked>
+								Latitude, Longtitude</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-address">
+								Address</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio" type="radio" id="radio-keyword">
+								Keyword</label>
+						</div>
+					</dd>
+					<dt class="latlng-area">Latitude</dt>
+					<dd class="latlng-area">
+						<div class="com-input-type">
+							<input type="text" id="latitude" name="latitude"  placeholder="Latitude" value="37.5163374">
+						</div>
+					</dd>
+					<dt class="latlng-area">Longtitude</dt>
+					<dd class="latlng-area">
+						<div class="com-input-type">
+							<input type="text" id="longtitude" name="longtitude"  placeholder="Longtitude" value="127.1005199">
+						</div>
+					</dd>
+					<dt class="address-area" style="display: none;">Address</dt>
+					<dd class="address-area" style="display: none;">
+						<div class="com-input-type">
+							<input type="text" id="address" name="address"  placeholder="Address" value="서울 서초구 서초대로74길 11">
+						</div>
+					</dd>
+					<dt class="keyword-area" style="display: none;">Keyword</dt>
+					<dd class="keyword-area" style="display: none;">
+						<div class="com-input-type">
+							<input type="text" id="keyword" name="keyword"  placeholder="Keyword" value="강남역">
+						</div>
+					</dd>
+					<dt class="zoom-level-area" >Zoom level</dt>
+					<dd class="zoom-level-area" >
+						<div class="com-input-type">
+							<select name="zoom-level" >
+								<option>1</option>
+								<option>3</option>
+								<option>5</option>
+								<option>7</option>
+								<option>9</option>
+								<option>11</option>
+								<option>14</option>
+							</select>
+						</div>
+					</dd>
+					<dt>MapMode</dt>
+					<dd>
+						<div class="com-input-type">
+							<select name="map-mode" >
+								<option>DEFAULT</option>
+								<option>ROADVIEW</option>
+								<option>TRAFFIC</option>
+								<option>TERRAIN</option>
+								<option>SKYVIEW</option>
+							</select>
+						</div>
+					</dd>
+					<dt></dt>
+					<dd class="custom-info-area" style="display: none;">
+						<div class="box-wrap">
+							<label>
+								<input name="custom-info" type="checkbox" id="custom-info" checked>
+								Custom InfoWindow</label>
+						</div>
+					</dd>
+						
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:showMapWithOption()" class="btn-type-dt-on">Show Map</a></div>
+			</li>
+			<!---//list_accord ----->
+		</ul>
+	</div>
+	<!--//listWrap --> 
+	<!--//contents --> 
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/semp.js"></script>
+
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>SEMP</h1>
+			<a class="prev"></a><a href="../index.html" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!---list_01--->
+			<li class="slide_li"><a><span>Request</span><em class="list-icon-go"></em></a> </li>
+			<li class="accord" style="display: none">
+				<!-- contents -->
+				<div class=""> 
+					<dl class="dl-hor">
+						<dt>connectionType</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="connectionType" name="connectionType"  placeholder="http/https/tcp" value="http">
+							</div>
+						</dd>
+						<dt>ipAddress</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="ipAddress" name="ipAddress"  placeholder="" value="SEMP_ipAddress" disabled="disabled">
+							</div>
+						</dd>
+						<dt>portNumber</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="portNumber" name="portNumber"  placeholder="" value="SEMP_portNumber" disabled="disabled">
+							</div>
+						</dd>
+						<dt>userId</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="userId" name="userId"  placeholder="ID of the service user" value="admin">
+							</div>
+						</dd>
+						<dt>deviceId</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="deviceId" name="deviceId"  placeholder="device's macAddress or mobile number" value="0112223333">
+							</div>
+						</dd>
+						<dt>contextUrl</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="contextUrl" name="contextUrl"  placeholder="" value="semp4">
+							</div>
+						</dd>
+						<dt>dataType</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="dataType" name="dataType"  placeholder="json / xml" value="json">
+							</div>
+						</dd>
+						<dt>sCode</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="sCode" name="sCode"  placeholder="Specific service id" value="empSearch">
+							</div>
+						</dd>
+						<dt>sType</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="sType" name="sType"  placeholder="Types set accroding to service codes" value="rest">
+							</div>
+						</dd>
+						<dt>parameter</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="parameter" name="parameter"  placeholder="Classifier=& or ; " value="">
+							</div>
+						</dd>
+						<dt>paramEncrypted</dt>
+						<dd>
+							<div class="box-wrap">
+							<label>
+								<input type="checkbox" id="paramEncrypted" name="paramEncrypted" checked>
+								</label>
+							</div>
+						</dd>
+						<dt>paramCompressed</dt>
+						<dd>
+							<div class="box-wrap">
+							<label>
+								<input type="checkbox" id="paramCompressed" name="paramCompressed" checked>
+								</label>
+							</div>
+						</dd>
+					</dl>
+				</div>
+			
+				<dl class="notice-data notice-ver">
+					<dt>SEMP Result :</dt>
+					<dd  id="sempResult"></dd>
+				</dl>
+				<div id="btn-group-dt"><a href="javascript:MDHBasic_SEMP_request();" class="btn-type-dt-on">Request</a></div>
+			</li>
+			<!---//list_01---> 
+			<!---list_02--->
+			<li class="slide_li"><a><span>File Upload</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none">
+				<!-- contents -->
+				<div class=""> 
+					<dl class="dl-hor">
+						<dt>requestId</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_requestId" name="up_requestId"  placeholder="" value="">
+							</div>
+						</dd>
+						<dt>connectionType</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_connectionType" name="up_connectionType"  placeholder="http/https/tcp" value="http">
+							</div>
+						</dd>
+						<dt>ipAddress</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_ipAddress" name="up_ipAddress"  placeholder="" value="SEMP_ipAddress" disabled="disabled">
+							</div>
+						</dd>
+						<dt>portNumber</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_portNumber" name="up_portNumber"  placeholder="" value="SEMP_portNumber" disabled="disabled">
+							</div>
+						</dd>
+						<dt>userId</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_userId" name="up_userId"  placeholder="ID of the service user" value="sulsiro">
+							</div>
+						</dd>
+						<dt>deviceId</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_deviceId" name="up_deviceId"  placeholder="device's macAddress or mobile number" value="0112223333">
+							</div>
+						</dd>
+						<dt>contextUrl</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_contextUrl" name="up_contextUrl"  placeholder="" value="semp4">
+							</div>
+						</dd>
+						<dt>dataType</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_dataType" name="up_dataType"  placeholder="json / xml" value="xml">
+							</div>
+						</dd>
+						<dt>sType</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_sType" name="up_sType"  placeholder="Types set accroding to service codes" value="fileUpload">
+							</div>
+						</dd>
+						<dt>showProgress</dt>
+						<dd>
+							<div class="box-wrap">
+							<label>
+								<input type="checkbox" id="up_showProgress" name="up_showProgress" checked>
+								</label>
+							</div>
+						</dd>
+						<dt>fileTransferUseLimit</dt>
+						<dd>
+							<div class="box-wrap">
+							<label>
+								<input type="checkbox" id="up_fileTransferUseLimit" name="up_fileTransferUseLimit">
+								</label>
+							</div>
+						</dd>
+						<dt>fileTransferMaxSIze</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="number" id="up_fileTransferMaxSIze" name="up_fileTransferMaxSIze"  placeholder="MB (default 100M)" value="20">
+							</div>
+						</dd>
+						<dt>fileDescription</dt>
+						<dd>
+							<div class="com-input-type">
+								<input type="text" id="up_fileDescription" name="up_fileDescription"  placeholder="" value="">
+							</div>
+						</dd>
+					</dl>
+				</div>
+			
+				<dl class="dl-ver">
+					<dt>File full path</dt>
+					<dd>
+						<div class="com-input-type">
+							<input type="text" id="up_filePath" name="up_filePath"  placeholder="File Path" value="file:///storage/sdcard0/DCIM/Camera/test.jpg">
+						</div>
+						<a href="javascript:getPicturePath()" class="btn-type-dt-semp">get Picture Path</a>
+					</dd>
+				</dl>
+				<dl class="notice-data notice-ver">
+					<dt>File Upload Result :</dt>
+					<dd id="sempfileUploadResult"></dd>
+				</dl>
+				<div id="btn-group-dt"><a href="javascript:MDHBasic_SEMP_fileUploadRequest()" class="btn-type-dt-on">Request</a></div>
+			</li>
+			<!---//list_02--->
+		</ul>
+	</div>
+	<!--//listWrap --> 
+</div>
+<!--//contents -->
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

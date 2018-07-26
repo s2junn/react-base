@@ -29,7 +29,7 @@ class Mentioned extends Component {
 		let _this = this;
         axios.get( testGithub + '?q=is:open+is:pr+mentions:se1108', {
 			headers: {
-				Authorization: 'token 04a1a297a090bbd7a9d882523a98a4618398b347',
+				Authorization: 'token ab4539702425dcd6ca8cc41ec1ab79405a691b7f',
 			}
         })
         .then(function (response) {
