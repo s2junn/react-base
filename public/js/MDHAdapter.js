@@ -4,8 +4,8 @@ window.console.log = window.console.log || function() {};
 console.log("START to load MDHAdapter.js");
 
 function loadJavascript(f) {
-    var h = document.getElementsByTagName("head")[0];
-    var e = h.getElementsByTagName("script");
+    var head = document.getElementsByTagName("head")[0];
+    var e = head.getElementsByTagName("script");
     var d;
     for (var g = 0; g < e.length; g++) {
         if (e[g].src.indexOf("MDHVirtualAdapter") > -1) {
@@ -21,7 +21,7 @@ function loadJavascript(f) {
     c.type = "text/javascript";
     c.charset = "utf-8";
     c.src = d;
-    h.appendChild(c)
+    head.appendChild(c)
 }
 var MDHValidator = new function() {
     this.isNumber = function(a) {
@@ -154,7 +154,7 @@ var MDHMgr = new function() {
     };
     this._constructors = [];
     this.available = true;
-    this.virtualMode = false;
+    this.virtualMode = true; // false;
     this._exec = {};
     this.device = {
         platform: "",
@@ -361,7 +361,7 @@ var MDHMgr = new function() {
         }
     };
     this.exec = function() {
-        console.log("exec() is called" + arguments[0]);
+        console.log("exec() is called " + arguments[0]);
         try {
             var isAsyncMode = MDHConfig && MDHConfig.useiOSAsync;
             if (!isAsyncMode && arguments[4] && this.device.platform == "iOS") {

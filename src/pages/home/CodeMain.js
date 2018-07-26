@@ -10,6 +10,10 @@ import { CodeJIRA } from 'pages/jira/CodeJIRA';
 import { CodeConfluence } from 'pages/confluence/CodeConfluence';
 import { CodePortal } from 'pages/portal/CodePortal';
 
+const propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
 const styles = {
     github: {
 
@@ -56,8 +60,6 @@ class CodeMain extends Component {
     }
 }
 
-CodeMain.propTypes = {
-    classes: PropTypes.object.isRequired
-}
+CodeMain.propTypes = propTypes;
 
 export default withStyles( styles )( CodeMain );

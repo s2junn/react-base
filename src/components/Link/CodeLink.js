@@ -20,7 +20,7 @@ class CodeLink extends Component {
 
       const { classes } = props;
       this.state = Object.assign( {}, props, { 
-        className: props.className + ' ' + classes.link
+        className: props.className + ' ' + classes.link + ( props.activeClassName ? ' ' + props.activeClassName : '' )
       } );
     };
 

@@ -2,11 +2,13 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { ListSubheader, List, ListItem, ListItemIcon, ListItemText, Collapse, Divider, Avatar } from '@material-ui/core';
+
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import CodeLink from 'components/Link/CodeLink.js';
 import SvgIcon from '@material-ui/core/SvgIcon';
+
 // import { InboxIcon, DraftsIcon, SendIcon, ExpandLess, ExpandMore, StarBorder } from '@material-ui/icons';
 
 import iconArrowDown from 'assets/images/icon_arrow_fold.svg';

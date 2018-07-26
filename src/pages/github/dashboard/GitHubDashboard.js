@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+
 import { List, ListItem, ListItemIcon, ListItemText, Collapse, Divider, Avatar } from '@material-ui/core';
 import Bubble from 'pages/github/components/Bubble/bubble.js';
 import BubbleHeader from 'pages/github/components/Bubble/bubbleHeader.js'

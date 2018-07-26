@@ -34,7 +34,7 @@ class Created extends Component {
 		return xmlDoc;
 	}
 
-	//* GitHub
+	/* GitHub
 	componentDidMount() {
 		let testGithub = 'https://api.github.com/search/issues';
 		let _this = this;
@@ -59,88 +59,78 @@ class Created extends Component {
         });
 	}
 	// */
-	/* SEMP
+	//* SEMP
     componentDidMount() {		
 	
-		var data = {};
-		data.CM_HEADER = [];
-		data.CM_HEADER.push({key:'Authorization', value:'token 740c64a70d9d63d4630124ebe2abee7a2c1f2014'});
+		var req_data = {
+			CM_HEADER: [
+				{ key: 'Authorization', value: 'token 6d19e074afc40e0db3005b66c4e64cb29d878979' }
+			],
+			CM_PARAMETER: [
+				{ key: 'q', value: 'is:open+is:pr+author:openobjectLeesomi' }
+			],
+			CM_PROTOCOL: {
+				CM_URI: 'https://api.github.com/search/issues',
+				CM_METHOD: 'GET'
+			}
+		};
 
-		data.CM_PARAMETER = [];
-		data.CM_PARAMETER.push({key:'q', value:'is:open+is:pr+author:openobjectLeesomi'});
-
-		data.CM_PROTOCOL = {};
-		data.CM_PROTOCOL.CM_URI = 'https://api.github.com/search/issues';
-		data.CM_PROTOCOL.CM_METHOD = 'GET';
-
-		var connectionType = 'http'; // $('#connectionType').val();	// reqOption.put("connectionType", "http");
-		var ipAddress = '114.201.140.150';			// reqOption.put("ipAddress", "114.201.140.150");
-        var portNumber = '10080';			// reqOption.put("portNumber", "10080");
-		var userId = 'admin';	// $('#userId').val();	// reqOption.put("userId", "admin");
-		var deviceId = '01122223333';	// $('#deviceId').val();	// reqOption.put("deviceId", "0112223333");
-		var contextUrl = 'semp'; 	// $('#contextUrl').val();	// reqOption.put("contextUrl", "semp");
-		var dataType = 'json'; // $('#dataType').val();	// reqOption.put("dataType", "json");
-		var sType = 'rest'; // $('#sType').val();	// reqOption.put("sType", "rest");
-		var sCode = 'GATEWAY_V1_GIT'; // $('#sCode').val();	// reqOption.put("sCode", "GATEWAY_V1_GIT");
-
-		var parameter = "MESSAGE=" + JSON.stringify(data).replace(/\\"/, '"'); // $('#parameter').val();	// reqOption.put("parameter", "MESSAGE=" + Uri.encode(data.toString().replace("\\/", "/")));
-		var paramEncrypted = 'true';	// ($('#paramEncrypted').is(":checked")).toString();
-		var paramCompressed = 'true';	// ($('#paramCompressed').is(":checked")).toString();
+		var env_data = {
+			connectionType: 'http',
+			ipAddress: '114.201.140.150',	// SEMP_ID
+			portNumber: '10080',			// SEMP_PORT
+			userId: 'admin',
+			deviceId: '01122223333',
+			contextUrl: 'semp',
+			dataType: 'json',
+			sType: 'rest',
+			sCode: 'GATEWAY_V1_GIT',
+			parameter: "MESSAGE=" + JSON.stringify( req_data ).replace(/\\"/, '"'),
+			paramEncrypted: 'true',
+			paramCompressed: 'true'
+		}
 		
 		window.MDHBasic.SEMP.request(
-			function(status) {
+			function( status ) {
 				var resulthtml = "";
-				if(dataType == "json") {
-					resulthtml =  JSON.stringify(status);
-					console.log("SEMP result : <br>" + resulthtml);
+				if ( env_data.dataType == "json" ) {
+					resulthtml =  JSON.stringify( status );
+					console.log( "SEMP result : <br>" + resulthtml );
 				} else {
-					resulthtml = status.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-					console.log("SEMP result : <br>" + resulthtml);
+					resulthtml = status.replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
+					console.log( "SEMP result : <br>" + resulthtml );
 					let xmlDoc = this.loadXMLString( status );
 					var serializer = new XMLSerializer();
-					var string1 = serializer.serializeToString(xmlDoc);
+					var string1 = serializer.serializeToString( xmlDoc );
 					
-					console.log("MDHBasic.SEMP.request      status  : "+status);
-					console.log("MDHBasic.SEMP.request      serializeToString  : "+string1);
-					
-					console.log( 'result = ' + resulthtml);
+					console.log( "MDHBasic.SEMP.request      status  : " + status );
+					console.log( "MDHBasic.SEMP.request      serializeToString  : " + string1 );
+					console.log( 'result = ' + resulthtml );
 				}
 			},
-			function(error) {
-				var ret = (error==-10001)?"MDH_INVALID_ARGUMENT":
-							(error==-10002)?"MDH_JSON_EXP_ERROR":
-							(error==-10099)?"MDH_UNKNOWN_ERROR":
-							(error==-10097)?"MDH_CLASS_NOT_FOUND":
-							(error==-10098)?"MDH_NO_SUCH_METHOD":
-							(error==-10009)?"MDH_PLATFORM_NOT_SUPPORTED":
+			function( error ) {
+				var ret = ( error == -10001 ) ? "MDH_INVALID_ARGUMENT":
+							( error == -10002 ) ? "MDH_JSON_EXP_ERROR":
+							( error == -10099 ) ? "MDH_UNKNOWN_ERROR":
+							( error == -10097 ) ? "MDH_CLASS_NOT_FOUND":
+							( error == -10098 ) ? "MDH_NO_SUCH_METHOD":
+							( error == -10009 ) ? "MDH_PLATFORM_NOT_SUPPORTED":
 							error;
 				
-				if(typeof ret == "object" ) {
-					var resultData = error.resultData.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-					console.log("SEMP result : <br>" + "Error code : " + error.resultCode + "<br>" + 
+				if ( typeof ret == "object" ) {
+					var resultData = error.resultData.replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
+					console.log( "SEMP result : <br>" + "Error code : " + error.resultCode + "<br>" + 
 										"Error Message : " + error.resultMsg + "<br>" + 
-										"Error Data : " + resultData);
+										"Error Data : " + resultData );
 				}
 				else {
 					console.log("SEMP result : <br>" + "Error code : " + ret);
 				}
 			},
-			{   
-				connectionType:connectionType,
-				ipAddress:ipAddress,	//SEMP_ipAddress,
-				portNumber:portNumber, // SEMP_portNumber,
-				userId:userId,
-				deviceId:deviceId,
-				contextUrl:contextUrl,
-				dataType:dataType,
-				sType:sType,
-				sCode:sCode,
-				parameter:parameter,
-				paramEncrypted : paramEncrypted,
-				paramCompressed : paramCompressed
-			}
+			env_data
 		);
-		
+	}
+	// */		
 
 		/*
         axios.post( testGithub , {
@@ -162,10 +152,9 @@ class Created extends Component {
             console.log(error);
         })
         .then(function () {
-            // always executed
+			// always executed
 		});
-		*/
-	/*}
+	}
 	// */
 
     render() {
