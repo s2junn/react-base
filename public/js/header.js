@@ -3,10 +3,14 @@
  * true : 단말에 올릴시
  * false : 브라우저에서 디버깅 시
  * */
-isDeviceMode = true;
+isDeviceMode = false;
 
-SEMP_ipAddress = "210.118.57.138";  // SEMP 서버 IP
-SEMP_portNumber = "8091";  // SEMP 서버 포트
+// SEMP_ipAddress = "210.118.57.138";  // SEMP 서버 IP
+// SEMP_portNumber = "8091";  // SEMP 서버 포트
+
+SEMP_ipAddress = "114.201.140.150";  // SEMP 서버 IP
+SEMP_portNumber = "10080";  // SEMP 서버 포트
+
 ATTACHMENT_ipAddress = "www.samsungsmartoffice.net"; //첨부뷰어 서버 IP
 ATTACHMENT_portNumber = "8002"; //첨부뷰어 서버 포트
 ATTACHMENT_fileUrl_xls = "http://moffice.sec.samsung.net/common/upload/bulk/공용단말기 서비스 일괄신청 양식.xls";
