@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/record.js"></script>
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Voice Record</h1>
+			<a class="prev"></a><a href="#;" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!--- list_accord ----->
+			<li class="accord">
+				<dl class="dl-ver">
+					<dt>File Title</dt>
+					<dd>
+						<div class="com-input-type">
+							<input type="text" id="record-title" name=""  placeholder="Title" value="record_01">
+						</div>
+					</dd>
+					<dt>Storage route</dt>
+					<dd>
+						<div class="com-input-type">
+							<input type="text" id="record-path" name=""  placeholder="Storage route" value="/storage/emulated/0/Harp공통기능테스트/Record">
+						</div>
+					</dd>
+				</dl>
+				<p class="time">
+					<time>00:00:00</time>
+				</p>
+				<div id="btn-group">
+					<ul>
+						<li id="start"><a href="javascript:MDHUtil_Record_start()" class="btn-type-dt">Record start</a></li>
+						<li id ="cancel" style="display: none;float: left;width: 48%;border-bottom: 0;"><a href="javascript:MDHUtil_Record_cancel()" class="btn-type-dt">Record cancel</a></li>
+						<li><a href="javascript:MDHUtil_Record_stop()" class="btn-type-dt-on">Record stop</a></li>
+					</ul>
+				</div>
+				
+				<!-- slider -->
+				<div class="ctrl-slider">
+					<div class="slider-basic"></div>
+					<div class="slider-range" style="width:0%;"><em>0%</em></div>
+					<div class="run-time"><span class="pl"> 00:00:00</span><span class="rt"> 00:00:00</span></div>
+				</div>
+				<!-- //slider -->
+				
+				<div id="btn-group">
+					<ul>
+						<li id="play"><a href="javascript:startPlayRecode()" class="btn-type-dt">Play</a></li>
+						<li id="pause" style="display: none;float: left;width: 48%;border-bottom: 0;"><a href="javascript:MDHUtil_player_pause()" class="btn-type-dt">Pause</a></li>
+						<li><a href="javascript:MDHUtil_player_stop()" class="btn-type-dt-on">Stop</a></li>
+					</ul>
+				</div>
+			</li>
+			<!---//list_accord ----->
+		</ul>
+	</div>
+	<!--//listWrap --> 
+	<!--//contents --> 
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

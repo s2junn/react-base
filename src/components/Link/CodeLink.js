@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const styles = {
   link: {
@@ -20,15 +20,15 @@ class CodeLink extends Component {
 
       const { classes } = props;
       this.state = Object.assign( {}, props, { 
-        className: props.className + ' ' + classes.link
+        className: props.className + ' ' + classes.link + ( props.activeClassName ? ' ' + props.activeClassName : '' )
       } );
     };
 
     render() {
         return (
-            <Link { ...this.state }>
+            <NavLink { ...this.state }>
                 { this.props.children }
-            </Link>
+            </NavLink>
         );
     }
 }

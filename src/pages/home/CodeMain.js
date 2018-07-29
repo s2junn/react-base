@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Switch, Route } from 'react-router-dom';
 import CodeLink from 'components/Link/CodeLink';
-import 'assets/scss/CodeMain.css';
+import 'assets/css/home.css';
 
 import { CodeGitHub } from 'pages/github/CodeGitHub';
 import { CodeJIRA } from 'pages/jira/CodeJIRA';
 import { CodeConfluence } from 'pages/confluence/CodeConfluence';
 import { CodePortal } from 'pages/portal/CodePortal';
+
+const propTypes = {
+    classes: PropTypes.object.isRequired
+};
 
 const styles = {
     github: {
@@ -56,8 +60,6 @@ class CodeMain extends Component {
     }
 }
 
-CodeMain.propTypes = {
-    classes: PropTypes.object.isRequired
-}
+CodeMain.propTypes = propTypes;
 
 export default withStyles( styles )( CodeMain );

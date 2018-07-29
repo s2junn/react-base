@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script src="../js/header.js"></script>
+<script type="text/javascript" src="js/schedule.js"></script>
+</head>
+
+<div id="id_account_pop" style="display: none;">
+<div class="dim"></div>
+<!-- layer popup -->
+<div class="popup">
+	<div class="inner">
+		<div class="head sch-pop-wrap">
+			<h2 id="clang-SCHEDULE_ACCOUNT_TITLE">캘린더</h2>
+		</div>
+		<div class="content sch-pop-inner">
+			<ul class="list-cal">
+				<li>
+					<dl onclick="selectAccount(this)">
+						<dt>
+							<div class="cal-wrap">
+								<label>
+									<input name="radio" type="radio" id="radio" value="내 캘린더" checked onchange="">
+									<span id="clang-SCHEDULE_MY_CALENDAR_ACCOUNT1">내 캘린더</span></label>
+							</div>
+						</dt>
+						<dd id="clang-SCHEDULE_MY_CALENDAR_ACCOUNT2">내 캘린더</dd>
+					</dl>
+				</li>
+			</ul>
+			<div id="btn-group-dt"><a href="javascript:hideAccountPopup();" class="btn-type-dt-on" id="clang-SCHEDULE_ACCOUNT_CANCEL">취소</a></div>
+		</div>
+	</div>
+</div>
+</div>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="schedule_container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1 id="clang-SCHEDULE_TITLE">Schedule Registration</h1>
+			<a class="prev"></a><a class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	<!-- contents -->
+	<div class="contents form-wrap"> 
+		<!-- comment --->
+		<div class="comment-con">
+			<dl class="dl-cal">
+				<dt id="clang-SCHEDULE_ACCOUNT">계정</dt>
+				<dd class="account" onclick="showAccountPopup();"><span></span><em class="ico-dropdown"></em> </dd>
+				<dt id="clang-SCHEDULE_SUBJECT">제목</dt>
+				<dd>
+					<input type="text" id="schedule_subject" name="schedule_subject"  placeholder="" value="">
+				</dd>
+				<dt id="clang-SCHEDULE_COMMENT">내용</dt>
+				<dd>
+					<label>
+						<textarea name="schedule_comment" class="textarea" id="schedule_comment" placeholder=""></textarea>
+					</label>
+				</dd>
+			</dl>
+		</div>
+		<!--//comment ---> 
+		
+		<!---- start ----->
+		<dl class="dl-hor-shc">
+			<dt id="clang-SCHEDULE_START">시작</dt>
+			<dd>
+				<div class="basic-input-type">
+					<label>
+						<input type="text" id="start_date" name="input"  onfocus="showDatePickerPopup('start');"  value=""/>
+					</label>
+				</div>
+			</dd>
+
+			<dt id="clang-SCHEDULE_END">종료</dt>
+			<dd>
+				<div class="basic-input-type">
+					<label>
+						<input type="text" id="end_date" name="input"  onfocus="showDatePickerPopup('hide');"  value=""/>
+					</label>
+				</div>
+			</dd>
+			
+			<!-- all day-->
+			<div class="all-day">
+				<input name="" type="checkbox" value="" id="allday" onchange="checkAllDay(this);"/>
+				<span id="clang-SCHEDULE_ALL_DAY">All day</span>
+			 </div>
+			<!--// all day --->
+		</dl>
+		<!----// start -----> 
+		
+		<!-- btn --->
+		  <div id="btn-group-dt">
+				<!-- <li><a href="#;" class="btn-type-dt">Cancel</a></li> -->
+				<a href="javascript:setScheduleToSPlanner();" class="btn-type-dt-on" id="clang-SCHEDULE_SAVE">저장</a>
+		</div>
+		<!--//btn ---> 
+		
+	</div>
+</div>
+<!--//contents -->
+<div id="datepicker_container" style="display: none;"></div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

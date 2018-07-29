@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="../basic/js/attachment.js"></script>
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Attachment</h1>
+			<a class="prev"></a><a href="" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	
+	<!-- contents -->
+	<div class="contents form-wrap"> 
+		<dl class="dl-ver">
+			<dt>Server Address</dt>
+			<dd><input type="text" id="server_address" name="server_address"  placeholder="" value="ATTACHMENT_ipAddress" disabled="disabled"></dd>
+		</dl>
+		<dl class="dl-hor">
+			<dt>Port</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="port" name="port"  placeholder="" value="ATTACHMENT_portNumber" disabled="disabled">
+				</div>
+			</dd>
+			<dt>File Address</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="file_address" name="file_address"  placeholder="" value="ATTACHMENT_fileUrl" disabled="disabled">
+				</div>
+			</dd>
+			<dt>File Name</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="file_name" name="file_name"  placeholder="" value="공용단말기 서비스 일괄신청 양식.xls">
+				</div>
+			</dd>
+			<dt>ID</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="id" name="id"  placeholder="" value="test">
+				</div>
+			</dd>
+			<dt>Password</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="password" name="password"  placeholder="" value="">
+				</div>
+			</dd>
+			
+			<!--  
+			<dt>Attach ID</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="attachID" name="attachID"  placeholder="" value="">
+				</div>
+			</dd>
+			<dt>Group</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="group" name="group"  placeholder="" value="">
+				</div>
+			</dd>
+			<dt>Email Address</dt>
+			<dd><input type="text" id="email_address" name="email_address"  placeholder="" value=""></dd>
+			<dt>DRM User ID</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="drm_user_id" name="drm_user_id"  placeholder="" value="">
+				</div>
+			</dd>
+			<dt>DRM Product Key</dt>
+			<dd>
+				<div class="com-input-type">
+					<input type="text" id="drm_product_key" name="drm_product_key"  placeholder="" value="">
+				</div>
+			</dd>
+			-->
+		</dl>
+		<dl class="dl-ver">
+			<dd>
+				<div class="box-wrap">
+					<label>
+						<input name="whole_sheet" type="checkbox" id="whole_sheet" >
+						Whole Sheet</label>
+				</div>
+				<div class="box-wrap">
+					<label>
+						<input name="fit_width" type="checkbox" id="fit_width" >
+						Fit width</label>
+				</div>
+				<div class="box-wrap">
+					<label>
+						<input name="show_toast" type="checkbox" id="show_toast" >
+						Show Toast</label>
+				</div>
+			</dd>
+		</dl>
+		
+		<div id="btn-group-dt"><a href="javascript:MDHBasic_Attachment_loadStart()" class="btn-type-dt-on">Attachment Viewer Load</a></div>
+		<dl id="docTypes" class="dl-ver" >
+			<dt><strong>MS Document</strong></dt>
+			<dd>
+				<a href="javascript:MDHBasic_Attachment_Excel()" class="btn-type-dt-sm-selected">xls</a>
+				<a href="javascript:MDHBasic_Attachment_PPT()" class="btn-type-dt-sm">ppt</a>
+				<a href="javascript:MDHBasic_Attachment_Docx()" class="btn-type-dt-sm">docx</a>
+			</dd>
+			<dt><strong>General Document</strong></dt>
+			<dd>
+				<a href="javascript:MDHBasic_Attachment_Txt()" class="btn-type-dt-sm">txt</a>
+				<a href="javascript:MDHBasic_Attachment_Pdf()" class="btn-type-dt-sm">pdf</a>
+				<a href="javascript:MDHBasic_Attachment_Gul()" class="btn-type-dt-sm">gul</a>
+			</dd>
+			<dt><strong>Picture</strong></dt>
+			<dd>
+				<a href="javascript:MDHBasic_Attachment_Jpg()" class="btn-type-dt-sm">jpg</a>
+			</dd>
+			<dt><strong>Etc</strong></dt>
+			<dd>
+				<a href="javascript:MDHBasic_Attachment_Whole_Sheet()" class="btn-type-dt-sm">WHOLE_SHEET</a>				
+			</dd>
+		</dl>
+	</div>
+	<!--//contents -->  
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

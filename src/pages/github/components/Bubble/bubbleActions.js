@@ -4,7 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
     bubbleActions: {
-        padding: '15px'
+		padding: '15px',
+		fontSize: '15px',
+		fontWeight: '600',
+        color: '#ffa4af'
     }
 };
 

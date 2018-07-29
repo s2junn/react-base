@@ -1,0 +1,52 @@
+
+<link rel="stylesheet" href="../css/datepicker.css" />
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="picker-wrap"> 
+
+	<!-- contents -->
+	<div class="switch-wrap">
+		<ul class="switch-button sh-type">
+			<li>
+				<button class="btn-switch on" id="clang-SCHEDULE_DATEPICKER_START" onclick="switchDatepicker('start')">Start</button>
+			</li>
+			<li>
+				<button class="btn-switch" id="clang-SCHEDULE_DATEPICKER_END" onclick="switchDatepicker('end')">End</button>
+			</li>
+		</ul>
+	</div>
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<div class="carender" id="start_datepicker"></div>
+		<div class="carender" id="end_datepicker" style="display: none;"></div>
+	</div>
+	
+	<!-- datepicker-->
+	<div class="picker-time-wrap">
+		<ul class="picker_time">
+			<li> <a class="btn_meridiem" onclick="changeAMPM();" id="AMPM">AM</a></li>
+			<li> <a class="ico_up" onclick="upHour();"><span>Up</span></a>
+				<input name="hour" class="int" id="hour" type="number" value="" onfocusout="setFormatTime()">
+				<a class="ico_down" onclick="downHour();"><span>Down</span></a></li>
+			<li class="slide">:</li>
+			<li> <a class="ico_up" onclick="upMinute()"><span>Up</span></a>
+				<input name="minute" class="int" id="minute" type="number" value="" onfocusout="setFormatTime()">
+				<a class="ico_down" onclick="downMinute()"><span>Down</span></a></li>
+		</ul>
+		
+		<!--// datepicker--> 
+	</div>
+	<!-- //picker -->
+	<div class="divider"></div>
+	<!---- Btngroup --->
+	<div id="btn-group-wi">
+		<ul>
+			<li><a class="btn-type" href="javascript:cancelSelectedDate();" id="clang-SCHEDULE_DATEPICKER_CANCEL">취소</a></li>
+			<li><a class="btn-type-on" href="javascript:confirmSelectedDate();" id="clang-SCHEDULE_DATEPICKER_OK">확인</a></li>
+		</ul>
+	</div>
+	<!----//Btngroup ---> 
+	<!--//listWrap --> 
+	<!--//contents --> 
+</div>
+<!------------------//sub_wrap -------------------->

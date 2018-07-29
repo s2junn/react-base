@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/telephony.js"></script>
+
+<!-- <link rel="stylesheet" type="text/css" href="../css/layout.css"> -->
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Telephony</h1>
+			<a class="prev"></a><a href="../index.html" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!---list_01--->
+			<li class="slide_li"><a><span>Call</span><em class="list-icon-go"></em></a></li>	
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Input Telephone Number</dt>
+					<dd><input type="number" id="callNumber" name=""  placeholder="Telephone Number" value=""></dd>
+				</dl>
+				<div id="btn-group-dt"><a href="javascript:MDHPhone_Telephony_callStart();" class="btn-type-dt-on" id="call-btn">Call</a></div>
+			</li>
+			<!---//list_accord -----> 
+			<!---//list_01---> 
+			
+			<!---list_02--->
+			<li class="slide_li"><a><span>send SMS</span><em class="list-icon-go"></em></a></li>
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Input Telephone Number</dt>
+					<dt class="sub">(multiple number seperated by "," without whitespace)</dt>
+					<dd>
+						<div class="com-input-type">
+							<input type="number" id="smsNumber" name=""  placeholder="Telephone Number" value="">
+						</div>
+					</dd>
+					<dt>Input SMS Message</dt>
+					<dd>
+						<div class="com-input-type">
+							<input type="text" id="smsMessage" name=""  placeholder="Message" value="">
+						</div>
+					</dd>
+					<dt>SMS Directly</dt>
+					<dd>
+						<div class="box-wrap">
+							<label>
+								<input name="" type="checkbox" id="directSMSOption" checked>
+								direct</label>
+						</div>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:MDHPhone_Telephony_sendSMSStart();" class="btn-type-dt-on" id="sms-btn">Send SMS</a></div>
+			</li>
+		</ul>
+	</div>
+	<!--//listWrap --> 
+	<!--//contents --> 
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

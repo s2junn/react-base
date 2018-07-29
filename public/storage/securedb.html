@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/securedb.js"></script>
+</head>
+<body>
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>SecureDB</h1>
+			<a class="prev"></a><a class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!-- <li class="tle"><span>Manual Run</span></li> -->
+			<li class="slide_li"><a><span>create DB</span><em class="list-icon-go"></em></a> </li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Please input DB name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecCreateDB" name="ExecCreateDB"  placeholder="TestDB1.db" class="int" maxlength="" value="TestDB1.db">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecCreateDB();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>drop DB</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Please input DB name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecDropDB" name="ExecDropDB"  placeholder="TestDB1.db" class="int" maxlength="" value="TestDB1.db">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecDropDB();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>close DB</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<div id="btn-group-dt"> <a href="javascript:btnExecCloseDB();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>create Table</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver securedb-create-table">
+					<dt>Please input Table name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecCreateTable" name="ExecCreateTable"  placeholder="data1" class="int" maxlength="" value="data1">
+						</label>
+					</dd>
+					<dt class="column-args">columnArgs</dt>
+					<dd>
+						<label class="column-rank">1&nbsp; &nbsp;</label>
+						<label>
+							id INTEGER PRIMARY KEY AUTOINCREMENT
+						</label>
+					</dd>
+					<dd>
+						<label class="column-rank">2&nbsp; &nbsp;</label>
+						<label>
+							no1 INTEGER default 1111
+						</label>
+					</dd>
+					<dd>
+						<label class="column-rank">3&nbsp; &nbsp;</label>
+						<label>
+							content1 text
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecCreateTable();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>drop Table</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Please input Table name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecDropTable" name="ExecDropTable"  placeholder="data1" class="int" maxlength="" value="data1">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecDropTable();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>insert Data</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver securedb-insert-data">
+					<dt>Table name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecInsertData" name="ExecInsertData"  placeholder="data1" class="int" maxlength="" value="data1">
+						</label>
+					</dd>
+					<dt>no1</dt>
+					<dd>
+						<label>
+							<input type="number" id="insert-no1" name="insert-no1"  placeholder="" class="int" maxlength="" value="111">
+						</label>
+					</dd>
+					<dt>content1</dt>
+					<dd>
+						<label>
+							<input type="text" id="insert-content1" name="insert-content1"  placeholder="" class="int" maxlength="" value="Text Text 111">
+						</label>
+					</dd>
+					
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecInsertData();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>update Data</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Table name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecUpdateData" name="ExecUpdateData"  placeholder="data1" class="int" maxlength="" value="data1">
+						</label>
+					</dd>
+					<dt>no1</dt>
+					<dd>
+						<label>
+							<input type="number" id="update-no1" name="update-no1"  placeholder="" class="int" maxlength="" value="999">
+						</label>
+					</dd>
+					<dt>content1</dt>
+					<dd>
+						<label>
+							<input type="text" id="update-content1" name="update-content1"  placeholder="" class="int" maxlength="" value="Text Text 999">
+						</label>
+					</dd>
+					<dt>whereClause</dt>
+					<dd class="securedb-arg">
+						<label>&nbsp; id > &nbsp;
+							<input type="number" id="update-where1" name="update-where1"  placeholder="" class="int" maxlength="" value="0">
+						</label>
+						<label>&nbsp; and id < &nbsp;
+							<input type="number" id="update-where2" name="update-where2"  placeholder="" class="int" maxlength="" value="3">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecUpdateData();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>query Data</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Table name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecQueryData" name="ExecQueryData"  placeholder="data1" class="int" maxlength="" value="data1">
+						</label>
+					</dd>
+					<dt>selection</dt>
+					<dd class="securedb-arg">
+						<label>&nbsp; id <= &nbsp;
+							<input type="number" id="query-data-arg" name="query-data-arg"  placeholder="" class="int" maxlength="" value="3">
+						</label>
+					</dd>
+					<dt>orderBy</dt>
+					<dd>
+						<label>
+							<input type="text" id="query-data-order" name="query-data-order"  placeholder="id DESC" class="int" maxlength="" value="id DESC">
+						</label>
+					</dd>
+						
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecQueryData();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>delete Data</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Table name</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecDeleteData" name="ExecDeleteData"  placeholder="data1" class="int" maxlength="" value="data1">
+						</label>
+					</dd>
+					<dt>whereClause</dt>
+					<dd class="securedb-arg">
+						<label>&nbsp; id =  &nbsp;
+							<input type="number" id="delete-data-arg" name="delete-data-arg"  placeholder="" class="int" maxlength="" value="1">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecDeleteData();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>query SQL</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Please input SQL</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecQuerySQL" name="ExecQuerySQL"  placeholder="SQL" class="int" maxlength="" value="select id, no1 from data1">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecQuerySQL();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+			<li class="slide_li"><a><span>exec SQL</span><em class="list-icon-go"></em></a></li>
+			<!--- list_accord ----->
+			<li class="accord" style="display: none;">
+				<dl class="dl-ver">
+					<dt>Please input SQL</dt>
+					<dd>
+						<label>
+							<input type="text" id="ExecExecSQL" name="ExecExecSQL"  placeholder="SQL" class="int" maxlength="" value="create table tablename (id integer default 0)">
+						</label>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"> <a href="javascript:btnExecExecSQL();" class="btn-type-dt-on">Execute</a></div>
+			</li>
+			<!---//list_accord ----->
+		</ul>
+	</div>
+	<!--//listWrap --> 
+</div>
+<!--//contents -->
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

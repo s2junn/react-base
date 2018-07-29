@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
+const propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
 const styles = {
     class1: {
         display: 'flex',
@@ -34,8 +38,5 @@ class CodeTemplate extends Component {
     }
 }
 
-CodeTemplate.propTypes = {
-    classes: PropTypes.object.isRequired
-}
-
+CodeTemplate.propTypes = propTypes;
 export default withStyles( styles )( CodeTemplate );

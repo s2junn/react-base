@@ -1,0 +1,58 @@
+/* Webfont */
+
+/* SamsungOne */
+
+/* 600 */
+@font-face {
+  font-family: 'samsungonelatin600';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/global/font/SamsungOneLatin-600.eot');
+  src: url('/global/font/SamsungOneLatin-600.eot?#iefix') format('embedded-opentype'), url('/global/font/SamsungOneLatin-600.woff') format('woff'), url('/global/font/SamsungOneLatin-600_v1.0.ttf') format('truetype'), url('/global/font/SamsungOneLatin-600.svg#SamsungOneLatin-600') format('svg');
+}
+
+@font-face {
+  font-family: 'samsungoneitaliclatin600';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/global/font/SamsungOneItalicLatinComp-600.eot');
+  src: url('/global/font/SamsungOneItalicLatinComp-600.eot?#iefix') format('embedded-opentype'), url('/global/font/SamsungOneItalicLatinComp-600.woff') format('woff'), url('/global/font/SamsungOneItalicLatinComp-600.ttf') format('truetype'), url('/global/font/SamsungOneItalicLatinComp-600.svg#SamsungOneItalicLatinComp-600') format('svg');
+}
+
+/* 800 */
+@font-face {
+  font-family: 'samsungonelatin800';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/global/font/SamsungOneLatin-800.eot');
+  src: url('/global/font/SamsungOneLatin-800.eot?#iefix') format('embedded-opentype'), url('/global/font/SamsungOneLatin-800.woff') format('woff'), url('/global/font/SamsungOneLatin-800_v1.0.ttf') format('truetype'), url('/global/font/SamsungOneLatin-800.svg#SamsungOneLatin-800') format('svg');
+}
+
+@font-face {
+  font-family: 'samsungoneitaliclatin800';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/global/font/SamsungOneItalicLatinComp-800.eot');
+  src: url('/global/font/SamsungOneItalicLatinComp-800.eot?#iefix') format('embedded-opentype'), url('/global/font/SamsungOneItalicLatinComp-800.woff') format('woff'), url('/global/font/SamsungOneItalicLatinComp-800.ttf') format('truetype'), url('/global/font/SamsungOneItalicLatinComp-800.svg#SamsungOneItalicLatinComp-800') format('svg');
+}
+
+/* Korean */
+@font-face {
+  font-family: 'samsungonekorean600';
+  src: url('../fonts/SamsungOneKorean-600.eot');
+  src: url('../fonts/SamsungOneKorean-600.eot?#iefix') format('embedded-opentype'), url('../fonts/SamsungOneKorean-600.woff') format('woff'), url('../fonts/SamsungOneKorean-600.ttf') format('truetype'), url('../fonts/SamsungOneKorean-600.svg#samsungonekorean600') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'samsungonekorean700';
+  src: url('../fonts/SamsungOneKorean-700.eot');
+  src: url('../fonts/SamsungOneKorean-700.eot?#iefix') format('embedded-opentype'), url('../fonts/SamsungOneKorean-700.woff') format('woff'), url('../fonts/SamsungOneKorean-700.ttf') format('truetype'), url('../fonts/SamsungOneKorean-700.svg#samsungonekorean700') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'samsungonelatin600', 'samsungonekorean600';
+}

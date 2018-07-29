@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/nfc_read_tag.js"></script>
+<script>
+		function onload(event)
+		{
+			MDH_onloadExecute();
+		}
+</script>
+
+</head>
+<body onload="javascript:onload();">
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap">
+<!---- header ----->
+<header>
+	<div id="header">
+		<h1>NFC Read</h1>
+		<a class="prev"></a><a class="home"></a></div>
+</header>
+<!----//header ----> 
+
+<!-- contents -->
+<div class="contents form-wrap">
+	<div class="tag-info">
+		<h1>Tag Info</h1>
+		<div class="group">
+			<dl class="dl-hor">
+				<dt>Tag ID</dt>
+				<dd>
+					<div class="com-input-type">
+						<input disabled type="text" id="tag_id" name="input"  placeholder="" value="" disabled>
+					</div>
+				</dd>
+				<dt>Tag Size</dt>
+				<dd>
+					<div class="com-input-type">
+						<input disabled type="text" id="tag_size" name="input"  placeholder="" value="" disabled>
+					</div>
+				</dd>
+				<dt>Tag Writable</dt>
+				<dd>
+					<div class="com-input-type">
+						<input disabled type="text" id="tag_writable" name="input"  placeholder="" value="" disabled>
+					</div>
+				</dd>
+				<dt>Tag Type</dt>
+				<dd>
+					<div class="com-input-type">
+						<input disabled type="text" id=tag_type name="input"  placeholder="" value="" disabled>
+					</div>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="tag-msg">
+		<h1>Ndef Message</h1>
+		<div class="group">
+			<dl class="dl-hor">
+				<dt>Tnf</dt>
+				<dd>
+					<div class="com-input-type">
+						<input disabled type="text" id="tnf" name="input"  placeholder="" value="" disabled>
+					</div>
+				</dd>
+				<dt>Type</dt>
+				<dd>
+					<div class="com-input-type">
+						<input disabled  type="text" id="type" name="input"  placeholder="" value="" disabled>
+					</div>
+				</dd>
+			</dl>
+			<!-- result -->
+			<dl class="dl-ver">
+			<dt>Result (TEXT or URI)</dt>
+				<dd>
+					<div class="com-input-type">  
+						<textarea disabled name="input" id="result" placeholder="" class="ht"></textarea>
+					</div>
+				</dd>
+			</dl>
+			<!--//esult -->
+		</div>
+	</div>
+	<!-- <div id="btn-group-dt"><a href="javascript:MDH_CheckNFCStatus()" class="btn-type-dt-on">Read Tag</a></div> -->
+	<!--//contents --> 
+</div>
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

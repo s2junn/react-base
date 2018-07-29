@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=0">
+<title>모바일표준개발플랫폼</title>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="../device/js/camera.js"></script>
+
+<script>
+		/* this function will be called when page loaded. */
+		function onLoad(event)
+		{		
+			MDHDevice_Camera_addListener();
+		}
+		
+		/* remove listener when page out.
+		 * iphone hybrid cannot support onUnload() on body tag.
+		 * so this function must call before you go to some url.
+		 */
+		function onUnload(event)
+		{			 
+			MDHDevice_Camera_removeListener();
+			MDHUtil.Browser.setLocation('./index.html');
+		}
+</script>
+</head>
+
+<body onLoad="javascript:onLoad();" onUnload="javascript:onUnload();">
+<!------------------ sub_wrap -------------------->
+<div id="container" class="sub-wrap"> 
+	<!---- header ----->
+	<header>
+		<div id="header">
+			<h1>Camera</h1>
+			<a class="prev"></a><a href="" class="home"></a></div>
+	</header>
+	<!----//header ----> 
+	
+	<!-- contents --> 
+	<!-- listWrap -->
+	<div class="contents list-wrap">
+		<ul class="list-type-1">
+			<!---list_01--->
+			<li class="slide_li"><a><span>getPicture</span><em class="list-icon-go"></em></a></li>	
+			<!--- list_accord ----->
+			<li class="accord" style="display: none">
+				<dl class="dl-ver">
+					<dt>Input Quality</dt>
+					<dd><input type="number" id="quality" name="quality"  placeholder="" value="50"></dd>
+					<dt>DestinationType</dt>
+					<dd> 
+						<div class="box-wrap">
+							<label>
+								<input name="radio1" type="radio" id="radio1-1" checked>
+								DATA_URL</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio1" type="radio" id="radio1-2">
+								FILE_URI</label>
+						</div> 
+					</dd>
+					<dt>PictureSourceType</dt>
+					<dd> 
+						<div class="box-wrap">
+							<label>
+								<input name="radio2" type="radio" id="radio2-1" checked>
+								PHOTOLIBRARY</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio2" type="radio" id="radio2-2">
+								CAMERA</label>
+						</div>
+						<!-- 2016.04.28 removed by dbkim
+						<div class="box-wrap">
+							<label>
+								<input name="radio2" type="radio" id="radio2-3">
+								SAVEDPHOTOALBUM</label>
+						</div>
+						 -->
+					</dd>
+					<dt>ImageType</dt>
+					<dd> 
+						<div class="box-wrap">
+							<label>
+								<input name="radio3" type="radio" id="radio3-1" checked>
+								Original Image</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio3" type="radio" id="radio3-2">
+								Thumbnail Image(512X384)</label>
+						</div>
+						<div class="box-wrap">
+							<label>
+								<input name="radio3" type="radio" id="radio3-3">
+								Thumbnail Image(96X96)</label>
+						</div>
+					</dd>
+				</dl>
+				<div id="btn-group-dt"><a href="javascript:MDHDevice_Camera_getPictureStart()" class="btn-type-dt-on">Get Content</a></div>
+				<div id="image_result" style="display: none" >
+					<div id="image_result_name" class="notice-data-result">????</div>
+					<img style="width:80%; height:80%" id="myImage" src="">
+				</div>
+			</li>
+			<!---//list_accord -----> 
+			<!---//list_01---> 
+			
+			<!---list_02--->
+			<li class="slide_li"><a><span>Delete Image(Android only)</span><em class="list-icon-go"></em></a></li>
+			<li class="accord" style="display: none">
+				<div id="image_result_d" style="display: none">
+					<div id="image_result_name_d" class="notice-data-result">????</div>
+				</div>
+				<div id="btn-group-dt"> <a href="javascript:MDHDevice_Camera_deleteImage()" class="btn-type-dt-on">Delete Image(Android only)</a></div>				
+			</li>
+			<!---//list_02--->
+		</ul>
+	</div>
+	<!--//listWrap --> 
+	<!--//contents --> 
+</div>
+<!------------------//sub_wrap -------------------->
+</body>
+</html>

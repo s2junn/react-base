@@ -15,6 +15,10 @@ import CodePortal from 'pages/portal/CodePortal';
 import CodeSideMenu from 'pages/home/sidemenu/CodeSideMenu';
 import temp_logo from 'assets/images/logo_main_header.png';
 
+const propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
 const styles = {
     // for AppBar
     root: {
@@ -49,11 +53,6 @@ class CodeHome extends Component {
             auth: false,
             anchorEl: null,
         }, props.location.state );
-
-        this.toggleDrawer.bind( this );
-        this.sidemenu.bind( this );
-        this.openSideMenu.bind( this );
-        this.closeSideMenu.bind( this );
     }
 
     toggleDrawer = (side, open) => (() => {
@@ -83,7 +82,7 @@ class CodeHome extends Component {
         return (
             <Fragment>
                 <div className={ classes.root }>
-                    <AppBar position="static" color="default">
+                    <AppBar position="static" color="default" style={{height:'60px', backgroundColor:'#fff'}}>
                         <Toolbar>
                             <Typography align="center" variant="title" color="inherit" className={ classes.flex }>
                                 <img src={ temp_logo } className="temp-logo" />
@@ -118,8 +117,6 @@ class CodeHome extends Component {
     }
 }
 
-CodeHome.propTypes = {
-    classes: PropTypes.object.isRequired
-}
+CodeHome.propTypes = propTypes;
 
 export default withStyles( styles )( CodeHome );

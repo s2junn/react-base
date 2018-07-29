@@ -18,7 +18,8 @@ const styles = {
 
 // @withStyles( styles )
 class CodeLifeCycleTemplate extends Component {
-    
+
+  // inputs
   static defaultProps = {
         
   };
@@ -26,6 +27,7 @@ class CodeLifeCycleTemplate extends Component {
   constructor( props ) {
     super( props );
 
+    // rendering target
     this.state = {
       error: false
     }
