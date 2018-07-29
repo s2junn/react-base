@@ -3,7 +3,7 @@
  * true : 단말에 올릴시
  * false : 브라우저에서 디버깅 시
  * */
-isDeviceMode = false;
+isDeviceMode = true;
 
 // SEMP_ipAddress = "210.118.57.138";  // SEMP 서버 IP
 // SEMP_portNumber = "8091";  // SEMP 서버 포트
@@ -39,8 +39,8 @@ ATTACHMENT_fileUrl_tiff =  "http://moffice.sec.samsung.net/common/upload/report/
 		if(scriptPaths[i].getAttribute("src").indexOf('header.js') !== -1){
 			//headerPath = scriptPaths[i].getAttribute("src").split('header.js')[0];
 			var path =  headerPath + rootPath; 
-			// document.write('<link rel="stylesheet" href="'+ path + 'css/common.css" />');
-			// document.write('<link rel="stylesheet" href="'+ path + 'css/layout.css" />');
+			document.write('<link rel="stylesheet" href="'+ path + 'css/common.css" />');
+			document.write('<link rel="stylesheet" href="'+ path + 'css/layout.css" />');
 			
 			document.write('<script src="'+ path + 'js/jquery.js"></script>');
 			

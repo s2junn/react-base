@@ -63,6 +63,9 @@ class Created extends Component {
     componentDidMount() {		
 	
 		var req_data = {
+			CM_SSO: {
+				CM_AUTH_ID: 'leesomi'
+			},
 			CM_HEADER: [
 				{ key: 'Authorization', value: 'token 6d19e074afc40e0db3005b66c4e64cb29d878979' }
 			],
@@ -77,8 +80,8 @@ class Created extends Component {
 
 		var env_data = {
 			connectionType: 'http',
-			ipAddress: '114.201.140.150',	// SEMP_ID
-			portNumber: '10080',			// SEMP_PORT
+			ipAddress: window.SEMP_ipAddress,
+			portNumber: window.SEMP_portNumber,
 			userId: 'admin',
 			deviceId: '01122223333',
 			contextUrl: 'semp',

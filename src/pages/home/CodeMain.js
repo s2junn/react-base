@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Switch, Route } from 'react-router-dom';
 import CodeLink from 'components/Link/CodeLink';
-import 'assets/scss/CodeMain.css';
+import 'assets/css/home.css';
 
 import { CodeGitHub } from 'pages/github/CodeGitHub';
 import { CodeJIRA } from 'pages/jira/CodeJIRA';

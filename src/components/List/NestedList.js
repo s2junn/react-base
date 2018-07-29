@@ -13,6 +13,11 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 import iconArrowDown from 'assets/images/icon_arrow_fold.svg';
 
+const propTypes = {
+  level: PropTypes.number.isRequired,
+	classes: PropTypes.object.isRequired
+};
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -29,23 +34,28 @@ const styles = theme => ({
 });
 
 class NestedList extends Component {
+
+	static defaultProps = {
+		level: 1
+	};
+
   render() {
 	const { classes } = this.props;
 	const { items } = this.props;
 
     return (
-      <div className={`nested-list nested-list-dep${this.props.itemDepth}`}>
+      <div className={`nested-list nested-list-dep${ this.props.level }`}>
             {
 				items.map( (item, index) => {
 					if ( item.children.length > 0 ) {
 						return (
 							<ExpansionPanel key={ index } className="nested-list-item">
 								<ExpansionPanelSummary className="nested-list-summary" expandIcon={ <img style={{height:'13px'}} src={iconArrowDown} /> }>
-									{ item.icon && <img className="nested-list-icon" src={item.icon} /> }
+									{ item.icon && <img className="nested-list-icon" src={ item.icon } /> }
 									<div className="nested-list-text">{ item.text }</div>
 								</ExpansionPanelSummary>									
 								<ExpansionPanelDetails className="nested-list-detail">
-									{ item.children && <NestedList items={ item.children } itemDepth={ this.props.itemDepth + 1 } classes={ classes } onClick={ this.props.onClick } /> }
+									{ item.children && <NestedList items={ item.children } level={ this.props.level + 1 } classes={ classes } onClick={ this.props.onClick } /> }
 								</ExpansionPanelDetails>
 							</ExpansionPanel>
 						);
@@ -64,9 +74,5 @@ class NestedList extends Component {
   }
 }
 
-NestedList.propTypes = {
-  classes: PropTypes.object.isRequired,
-  itemDepth: PropTypes.number.isRequired
-};
-
+NestedList.propTypes = propTypes;
 export default withStyles( styles )( NestedList );

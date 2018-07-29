@@ -5,12 +5,16 @@ import CodeLink from 'components/Link/CodeLink';
 
 import 'assets/css/login.css';
 
+const propTypes = {
+	classes: PropTypes.object.isRequired
+};
+
 const styles = theme => ({
     link: {
         textDecoration: 'none'
 	},
 	loginWrap: {
-		background: `url(${require( 'assets/images/bg_login.png' )}) no-repeat center/100% 100%`
+		background: `url( ${ require( 'assets/images/bg_login.png' ) } ) no-repeat center/100% 100%`
 	}
 });
 
@@ -22,7 +26,7 @@ class CodeLogin extends Component {
             <div className={'login ' + classes.loginWrap}>
                 <div className="login-box">
 					<div className="login-box__logo">
-						<img src={require('assets/images/logo_main.png')} alt=""/>
+						<img src={ require('assets/images/logo_main.png') } alt="" />
 					</div>
 					<form action="">
 						<input type="text" placeholder="ID"/>
@@ -39,8 +43,5 @@ class CodeLogin extends Component {
     }
 }
 
-CodeLogin.propTypes = {
-    classes: PropTypes.object.isRequired
-};
-
+CodeLogin.propTypes = propTypes;
 export default withStyles( styles )( CodeLogin );

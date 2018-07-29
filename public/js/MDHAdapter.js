@@ -154,7 +154,7 @@ var MDHMgr = new function() {
     };
     this._constructors = [];
     this.available = true;
-    this.virtualMode = true; // false;
+    this.virtualMode = false;
     this._exec = {};
     this.device = {
         platform: "",

@@ -162,7 +162,7 @@ class CodeSideMenu extends Component {
                     type: CodeLink,
                     icon: icon_settings,
                     text: 'Settings',
-                    path: '/home/',
+                    path: '/home/settings',
                     open: false,
                     children: []
                 },

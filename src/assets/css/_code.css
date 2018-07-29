@@ -1,0 +1,49 @@
+/*
+  [ Usage ]
+    parent selector {
+      ... style ...
+      child selector {
+        ... style ...
+      }
+    }
+
+  [ Predefined ]
+    !global
+    !default
+    !important
+
+	[ Variable ]
+	  $primary-color: #ffa41f;
+
+  [ Internal Functions ]
+  (https://sass-lang.com/documentation/Sass/Script/Functions.html)
+
+    $lighten-color: lighten( $primary-color, 10% );
+    $darken-color: darnken( $primary-color, 10% );
+
+  [ Import ]
+    @import 'color.scss';
+    or 
+    @import 'color';
+
+  [ Mixin ]
+    @mixin mixinName( params ) {
+      ... style ...: param,
+    }
+
+  [ Custom Funtions ]
+    @function funcName( params ) {
+      @return value;
+    }
+*/
+
+/* Fonts */
+@import '/assets/css/_fonts.css';
+
+/* Colors */
+/* 
+$primary-color: #ffa41f;
+$secondary-color: darken( $primary-color, 10% ); 
+*/
+
+

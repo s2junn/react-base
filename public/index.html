@@ -3,9 +3,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="theme-color" content="#000000">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
 
 	<!--
 		manifest.json provides metadata used when your web app is added to the
@@ -29,9 +29,6 @@
 	<script type="text/javascript" src="%PUBLIC_URL%/js/network.check.js"></script>
 	<script type="text/javascript" src="%PUBLIC_URL%/opensourcePage.js"></script>
 
-	<script type="text/javascript" scr="%PUBLIC_URL%/js/MDHVirtualAdapter.js"></script>
-	<script type="text/javascript" src="%PUBLIC_URL%/js/MDHAdapter.js"></script>
-	<script type="text/javascript" src="%PUBLIC_URL%/basic/js/semp.js"></script>
 </head>
 
 <body>
@@ -40,7 +37,7 @@
 	</noscript>
 	<div id="id_network_pop"></div>
 	<!------------------ sub_wrap -------------------->
-	<div id="container" class="sub-wrap" style="display: block;">
+	<div id="container" class="sub-wrap" style="display: none;">
 		<!---- header ----->
 		<header>
 			<div id="header" class="in">
@@ -118,89 +115,6 @@
 			To begin the development, run `npm start` or `yarn start`.
 			To create a production bundle, use `npm run build` or `yarn build`.
 		-->
-	<script type="text/javascript">
-		$( document ).ready( function() {
-			console.log( 'openobject :: document ready.' );
-
-			
-			// window.MDHBasic = MDHBasic;
-	
-			var req_data = {
-				CM_HEADER: [
-					{ key: 'Authorization', value: 'token 6d19e074afc40e0db3005b66c4e64cb29d878979' }
-				],
-				CM_PARAMETER: [
-					{ key: 'q', value: 'is:open+is:pr+author:openobjectLeesomi' }
-				],
-				CM_PROTOCOL: {
-					CM_URI: 'https://api.github.com/search/issues',
-					CM_METHOD: 'GET'
-				}
-			};
-	
-			var env_data = {
-				connectionType: 'http',
-				ipAddress: '114.201.140.150',	// SEMP_ID
-				portNumber: '10080',			// SEMP_PORT
-				userId: 'admin',
-				deviceId: '01122223333',
-				contextUrl: 'semp',
-				dataType: 'json',
-				sType: 'rest',
-				sCode: 'GATEWAY_V1_GIT',
-				parameter: "MESSAGE=" + JSON.stringify( req_data ).replace(/\\"/, '"'),
-				paramEncrypted: 'true',
-				paramCompressed: 'true'
-			}
-			
-			console.log( 'req_data = ' + req_data );
-			console.log( 'env_data = ' + env_data );
-
-			// window.MDHBasic.SEMP.request(
-			MDHBasic.SEMP.request(
-				function( status ) {
-					console.log('success');
-					var resulthtml = "";
-					if ( env_data.dataType == "json" ) {
-						resulthtml =  JSON.stringify( status );
-						console.log( "SEMP result : <br>" + resulthtml );
-					} else {
-						resulthtml = status.replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
-						console.log( "SEMP result : <br>" + resulthtml );
-						let xmlDoc = this.loadXMLString( status );
-						var serializer = new XMLSerializer();
-						var string1 = serializer.serializeToString( xmlDoc );
-						
-						console.log( "MDHBasic.SEMP.request      status  : " + status );
-						console.log( "MDHBasic.SEMP.request      serializeToString  : " + string1 );
-						console.log( 'result = ' + resulthtml );
-					}
-				},
-				function( error ) {
-					console.log('error');
-					var ret = ( error == -10001 ) ? "MDH_INVALID_ARGUMENT":
-								( error == -10002 ) ? "MDH_JSON_EXP_ERROR":
-								( error == -10099 ) ? "MDH_UNKNOWN_ERROR":
-								( error == -10097 ) ? "MDH_CLASS_NOT_FOUND":
-								( error == -10098 ) ? "MDH_NO_SUCH_METHOD":
-								( error == -10009 ) ? "MDH_PLATFORM_NOT_SUPPORTED":
-								error;
-					
-					if ( typeof ret == "object" ) {
-						var resultData = error.resultData.replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
-						console.log( "SEMP result : <br>" + "Error code : " + error.resultCode + "<br>" + 
-											"Error Message : " + error.resultMsg + "<br>" + 
-											"Error Data : " + resultData );
-					}
-					else {
-						console.log("SEMP result : <br>" + "Error code : " + ret);
-					}
-				},
-				env_data
-			);
-		});
-
-	</script>
 </body>
 
 </html>

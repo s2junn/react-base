@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Tabs, Tab, List, ListItem } from '@material-ui/core';
 import { Switch, Route } from 'react-router-dom'
-import 'se1108/git.css';
+
 import { Created, Assigned, Mentioned } from 'pages/github/pull-requests';
+import 'assets/css/github.css';
 
 const propTypes = {
 	classes: PropTypes.object.isRequired
